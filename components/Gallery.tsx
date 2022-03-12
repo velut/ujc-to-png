@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { nonogramsSelector, useStore } from "../lib/store";
 
 export function Gallery() {
@@ -12,7 +11,14 @@ export function Gallery() {
           <li key={nonogram.filename}>
             {JSON.stringify(nonogram, null, 2)}
             {nonogram.image && (
-              <Image src={nonogram.image} alt="" width={500} height={500} />
+              //   <Image src={nonogram.image} alt="" width={500} height={500} />
+              <img
+                src={nonogram.image}
+                alt=""
+                width={500}
+                height={500}
+                className="pixel-art"
+              />
             )}
           </li>
         ))}
