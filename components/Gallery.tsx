@@ -1,6 +1,14 @@
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { loadingSelector, nonogramsSelector, useStore } from "../lib/store";
-import { DownloadButton } from "./DownloadButton";
+
+const DownloadButton = dynamic(
+  () =>
+    import("./DownloadButton").then(
+      ({ DownloadButton }) => DownloadButton as any
+    ),
+  { ssr: false }
+);
 
 export function Gallery() {
   const loading = useStore(loadingSelector);

@@ -1,13 +1,8 @@
 import type { NextPage } from "next";
-import dynamic from "next/dynamic";
 import Head from "next/head";
 import Link from "next/link";
 import { Dropzone } from "../components/Dropzone";
-
-const Gallery = dynamic(
-  () => import("../components/Gallery").then(({ Gallery }) => Gallery as any),
-  { ssr: false }
-);
+import { Gallery } from "../components/Gallery";
 
 const Home: NextPage = () => {
   return (
