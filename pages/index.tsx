@@ -1,14 +1,19 @@
 import type { NextPage } from "next";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { Dropzone } from "../components/Dropzone";
-import { Gallery } from "../components/Gallery";
+
+const Gallery = dynamic(
+  () => import("../components/Gallery").then(({ Gallery }) => Gallery as any),
+  { ssr: false }
+);
 
 const Home: NextPage = () => {
   return (
     <div className="mx-auto max-w-screen-lg space-y-8 px-4 sm:px-8">
       <section className="mt-8 space-y-4">
         <h1 className="text-center text-4xl">ujc to png</h1>
-        <p className="px-12 text-center text-lg md:px-28 lg:px-64">
+        <p className="px-4 text-center text-lg sm:px-12 md:px-28 lg:px-64">
           Export, convert and save your puzzle designs from{" "}
           <a
             className="underline"
@@ -54,9 +59,8 @@ const Home: NextPage = () => {
         <Dropzone />
       </section>
 
-      <section className="space-y-4">
+      <section>
         <h2 className="text-2xl">Your Nonograms</h2>
-
         <Gallery />
       </section>
 
