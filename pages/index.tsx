@@ -1,23 +1,38 @@
 import type { NextPage } from "next";
-import Head from "next/head";
+import NextHead from "next/head";
 import Link from "next/link";
 import { Dropzone } from "../components/Dropzone";
 import { Gallery } from "../components/Gallery";
 
 const Home: NextPage = () => {
+  const pageTitle =
+    "ujc to png | Export, convert and save your puzzle designs from Nonograms Katana as simple png images";
+  const pageDescription =
+    "Export, convert and save your ujc puzzle designs from Nonograms Katana as simple png images";
+
   return (
     <>
-      <Head>
-        <title>
-          ujc to png | Export, convert and save your puzzle designs from
-          Nonograms Katana as simple png images
-        </title>
-        <meta
-          name="description"
-          content="Export, convert and save your ujc puzzle designs from
-          Nonograms Katana as simple png images"
-        />
-      </Head>
+      <NextHead>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:url" content="https://ujc-to-png.vercel.app/" />
+
+        <meta property="twitter:title" content={pageTitle} />
+        <meta property="twitter:description" content={pageDescription} />
+
+        {process.env.NODE_ENV === "production" &&
+          typeof window !== "undefined" && (
+            <script
+              async
+              defer
+              data-domain="ujc-to-png.vercel.app"
+              src="https://plausible.io/js/plausible.outbound-links.js"
+            />
+          )}
+      </NextHead>
 
       <div className="mx-auto max-w-screen-lg space-y-8 px-4 sm:px-8">
         <section className="mt-8 space-y-4">
@@ -181,11 +196,7 @@ const Home: NextPage = () => {
 
             <div className="mt-4 flex flex-wrap gap-4">
               <Link href="/privacy">
-                <a className="underline">TODO: Privacy Policy</a>
-              </Link>
-
-              <Link href="/credits">
-                <a className="underline">TODO: Credits</a>
+                <a className="underline">Privacy Policy</a>
               </Link>
 
               <a
