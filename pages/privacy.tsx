@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import NextHead from "next/head";
 
 const PrivacyPage: NextPage = () => {
-  const pageTitle = "ucj to png | Privacy Policy";
+  const pageTitle = "ujc to png | Privacy Policy";
   const pageDescription = "Privacy Policy for ujc to png";
 
   return (
