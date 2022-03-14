@@ -30,7 +30,7 @@ const Home: NextPage = () => {
             >
               Nonograms Katana
             </a>{" "}
-            as simple <span className="font-mono">.png</span> images.
+            as simple png images.
           </p>
         </section>
 
@@ -76,11 +76,125 @@ const Home: NextPage = () => {
           <Gallery />
         </section>
 
+        <section className="space-y-4">
+          <h2 className="text-2xl">FAQ</h2>
+
+          <div className="space-y-2">
+            <h3 className="text-lg">How does this work?</h3>
+            <p>
+              This tool analyzes the <span className="font-mono">.ujc</span>{" "}
+              files exported from Nonograms Katana and extracts the png images
+              representing the nonogram designs; to learn more, you can review
+              the source code{" "}
+              <a
+                className="underline"
+                href="https://github.com/velut/ujc-to-png"
+              >
+                available on GitHub
+              </a>
+              .
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="text-lg">Who is this for?</h3>
+            <p>
+              This tool is aimed at nonogram authors that want to backup their
+              own designs and have them available as images.
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="text-lg">Are my nonograms private?</h3>
+            <p>
+              Yes. The tool works entirely in your browser and no file ever
+              leaves your device.
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="text-lg">
+              Can I download nonograms from other authors?
+            </h3>
+            <p>No. This tool does not download nonograms from the app.</p>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="text-lg">How many nonograms can I convert?</h3>
+            <p>
+              Right now there is no limit. Note however that the more nonograms
+              you select the slower the process will be, especially on less
+              powerful devices.
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="text-lg">
+              Why nothing happens after I select the{" "}
+              <span className="font-mono">.ujc</span> files?
+            </h3>
+            <p>
+              On less powerful devices, the conversion process can take a few
+              seconds. Either wait a little before retrying or convert fewer
+              nonograms at a time.
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="text-lg">
+              Why do some images have transparent backgrounds?
+            </h3>
+            <p>
+              The background color of colored nonograms is currently saved as
+              transparent.
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="text-lg">
+              I found an error / I want to ask another question.
+            </h3>
+            <p>
+              Please{" "}
+              <a
+                className="underline"
+                href="https://github.com/velut/ujc-to-png/issues"
+              >
+                open an issue on Github
+              </a>
+              .
+            </p>
+          </div>
+        </section>
+
         <div>
-          <footer>
-            <Link href="/privacy">
-              <a className="underline">Privacy Policy</a>
-            </Link>
+          <footer className="mt-12 border-t border-gray-500 py-6">
+            <p>
+              Website by{" "}
+              <a
+                className="underline"
+                href="https://twitter.com/EdoardoScibona"
+              >
+                Edoardo Scibona
+              </a>
+            </p>
+
+            <div className="mt-4 flex flex-wrap gap-4">
+              <Link href="/privacy">
+                <a className="underline">TODO: Privacy Policy</a>
+              </Link>
+
+              <Link href="/credits">
+                <a className="underline">TODO: Credits</a>
+              </Link>
+
+              <a
+                className="underline"
+                href="https://github.com/velut/ujc-to-png"
+              >
+                GitHub
+              </a>
+            </div>
           </footer>
         </div>
       </div>
