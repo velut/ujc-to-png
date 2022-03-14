@@ -114,7 +114,7 @@ const Home: NextPage = () => {
           <div className="space-y-2">
             <h3 className="text-lg">Who is this for?</h3>
             <p>
-              This tool is aimed at nonogram authors that want to backup their
+              This tool is aimed at nonogram authors who want to backup their
               own designs and have them available as images.
             </p>
           </div>
