@@ -127,6 +127,8 @@ const PrivacyPage: NextPage = () => {
             .
           </p>
         </section>
+
+        <div className="py-6" />
       </div>
     </>
   );
