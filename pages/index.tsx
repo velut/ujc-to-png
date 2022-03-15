@@ -166,6 +166,15 @@ const Home: NextPage = () => {
           </div>
 
           <div className="space-y-2">
+            <h3 className="text-lg">Why are images so small?</h3>
+            <p>
+              Images are converted respecting the original dimensions of the
+              nonogram. For example, a 20x20 nonogram becomes a 20 by 20 pixels
+              image.
+            </p>
+          </div>
+
+          <div className="space-y-2">
             <h3 className="text-lg">
               I found an error / I want to ask another question.
             </h3>
