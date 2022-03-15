@@ -169,7 +169,7 @@ const Home: NextPage = () => {
             <h3 className="text-lg">Why are images so small?</h3>
             <p>
               Images are converted respecting the original dimensions of the
-              nonogram. For example, a 20x20 nonogram becomes a 20 by 20 pixels
+              nonograms. For example, a 20x20 nonogram becomes a 20 by 20 pixels
               image.
             </p>
           </div>
