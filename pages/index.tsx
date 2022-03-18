@@ -156,16 +156,6 @@ const Home: NextPage = () => {
           </div>
 
           <div className="space-y-2">
-            <h3 className="text-lg">
-              Why do some images have transparent backgrounds?
-            </h3>
-            <p>
-              The background color of colored nonograms is currently saved as
-              transparent.
-            </p>
-          </div>
-
-          <div className="space-y-2">
             <h3 className="text-lg">Why are images so small?</h3>
             <p>
               Images are converted respecting the original dimensions of the
