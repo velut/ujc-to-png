@@ -108,7 +108,7 @@ async function getPngBlob(
   rawUjcData: Uint8Array
 ): Promise<Blob> {
   const start = findPngStartingPos(rawUjcData);
-  if (!start) {
+  if (start === undefined) {
     throw new Error(`getPngBlob: no png data found in file ${ujcFilename}`);
   }
   const rawPngData = rawUjcData.subarray(start);
