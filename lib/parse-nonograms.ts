@@ -88,7 +88,8 @@ async function renderPng(
 
 async function recolorPng(input: Blob): Promise<Blob> {
   // Get canvas and context
-  const canvas = document.getElementById("recolor-canvas") as HTMLCanvasElement;
+  const canvas = document.createElement("canvas") as HTMLCanvasElement;
+  // const canvas = document.getElementById("recolor-canvas") as HTMLCanvasElement;
   const context = canvas.getContext("2d") as CanvasRenderingContext2D;
 
   // Create image and wait until it's loaded
@@ -127,7 +128,8 @@ async function recolorPng(input: Blob): Promise<Blob> {
 
 async function scalePng(input: Blob, scale: number): Promise<Blob> {
   // Get canvas and context
-  const canvas = document.getElementById("scale-canvas") as HTMLCanvasElement;
+  const canvas = document.createElement("canvas") as HTMLCanvasElement;
+  // const canvas = document.getElementById("scale-canvas") as HTMLCanvasElement;
   const context = canvas.getContext("2d") as CanvasRenderingContext2D;
 
   // Create image and wait until it's loaded
