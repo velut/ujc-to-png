@@ -1,12 +1,14 @@
+import { ImageOutputMode, imageOutputModeScale } from "./image-output-mode";
+import { UjcFile } from "./parse-ujc-files";
+import { writeCanvasToBlob } from "./write-canvas-to-blob";
+
 export interface Nonogram {
-  /** Parsed nonogram file */
+  /** Rendered nonogram png file */
   pngFile: File;
   /** Object URL for image display */
   pngFileObjectUrl: string;
   /** Timestamp in ISO 8601 format for when the nonogram was created */
   timestamp: string;
-  /** Name of the `.ujc` file created by Nonogram Katana */
-  ujcFilename: string;
 
   // /** Name for the nonogram */
   // name?: string;
@@ -20,12 +22,12 @@ export interface Nonogram {
   // height?: number;
 }
 
-export async function parseNonograms(ujcFiles: File[]): Promise<Nonogram[]> {
-  // Try to parse all nonograms from locally uploaded files
+export async function parseNonograms(
+  ujcFiles: UjcFile[],
+  mode: ImageOutputMode
+): Promise<Nonogram[]> {
   const results = await Promise.allSettled(
-    ujcFiles.map((ujcFile) => {
-      return parseNonogram(ujcFile);
-    })
+    ujcFiles.map((ujcFile) => parseNonogram(ujcFile, mode))
   );
 
   // Keep only successfully parsed nonograms and order from oldest to newest
@@ -42,112 +44,55 @@ export async function parseNonograms(ujcFiles: File[]): Promise<Nonogram[]> {
   return nonograms;
 }
 
-async function parseNonogram(ujcFile: File): Promise<Nonogram> {
-  const ujcFilename = ujcFile.name;
-  const timestamp = parseTimestamp(ujcFilename);
-  const rawUjcData = await readFile(ujcFile);
-  const pngFile = await parsePngFile(ujcFilename, rawUjcData, timestamp);
+async function parseNonogram(
+  ujcFile: UjcFile,
+  mode: ImageOutputMode
+): Promise<Nonogram> {
+  const pngFile = await parsePngFile(ujcFile, mode);
   const pngFileObjectUrl = URL.createObjectURL(pngFile);
+  const timestamp = ujcFile.timestamp;
   return {
     pngFile,
     pngFileObjectUrl,
     timestamp,
-    ujcFilename,
   };
 }
 
-function parseTimestamp(filename: string): string {
-  // Names for `.ujc` files look like this `200131_123456_ABC.ujc`
-  // or more generally `yymmdd_hhmmss_RAND.ujc`.
-  const regex =
-    /^(?<year>\d{2})(?<month>\d{2})(?<day>\d{2})_(?<hour>\d{2})(?<minute>\d{2})(?<second>\d{2})_/;
-  const match = regex.exec(filename);
-  if (!match || !match.groups) {
-    // No timestamp in filename? Set creation time to now.
-    return new Date().toISOString();
-  }
-  const year = `20${match.groups.year}`;
-  const { month, day, hour, minute, second } = match.groups;
-  const date = new Date(`${year}-${month}-${day}T${hour}:${minute}:${second}Z`);
-  return date.toISOString();
-}
-
-async function readFile(file: File): Promise<Uint8Array> {
-  // Read raw contents of locally uploaded file
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onerror = () => {
-      reject(
-        new Error(`readFile: error reading file ${file.name}: ${reader.error}`)
-      );
-    };
-    reader.onload = () => {
-      const buffer = reader.result as ArrayBuffer;
-      const data = new Uint8Array(buffer);
-      resolve(data);
-    };
-    reader.readAsArrayBuffer(file);
-  });
-}
-
 async function parsePngFile(
-  ujcFilename: string,
-  rawUjcData: Uint8Array,
-  timestamp: string
+  ujcFile: UjcFile,
+  mode: ImageOutputMode
 ): Promise<File> {
-  const pngBlob = await getPngBlob(ujcFilename, rawUjcData);
-  const pngFilename = ujcFilename.replace(".ujc", ".png");
+  const pngBlob = await renderPng(ujcFile, mode);
+  const pngFilename = ujcFile.filename.replace(".ujc", ".png");
   return new File([pngBlob], pngFilename, {
     type: "image/png",
-    lastModified: new Date(timestamp).getTime(),
+    lastModified: new Date(ujcFile.timestamp).getTime(),
   });
 }
 
-async function getPngBlob(
-  ujcFilename: string,
-  rawUjcData: Uint8Array
+async function renderPng(
+  ujcFile: UjcFile,
+  mode: ImageOutputMode
 ): Promise<Blob> {
-  const start = findPngStartingPos(rawUjcData);
-  if (start === undefined) {
-    throw new Error(`getPngBlob: no png data found in file ${ujcFilename}`);
+  if (mode === "raw") {
+    return ujcFile.pngBlob;
   }
-  const rawPngData = rawUjcData.subarray(start);
-  const blob = await fixPng(rawPngData);
-  return blob;
+  const recoloredPng = await recolorPng(ujcFile.pngBlob);
+  const scale = imageOutputModeScale(mode);
+  if (scale === 1) {
+    return recoloredPng;
+  }
+  const scaledPng = await scalePng(recoloredPng, scale);
+  return scaledPng;
 }
 
-function findPngStartingPos(rawUjcData: Uint8Array): number | undefined {
-  // Search for png header signature in the raw ujc data
-  for (let index = 0; index < rawUjcData.length; index++) {
-    // Last header index exceeds data length, stop searching
-    if (index + 7 > rawUjcData.length - 1) {
-      return undefined;
-    }
-
-    // Check png header/magic number
-    if (
-      rawUjcData[index] === 0x89 &&
-      rawUjcData[index + 1] === 0x50 &&
-      rawUjcData[index + 2] === 0x4e &&
-      rawUjcData[index + 3] === 0x47 &&
-      rawUjcData[index + 4] === 0x0d &&
-      rawUjcData[index + 5] === 0x0a &&
-      rawUjcData[index + 6] === 0x1a &&
-      rawUjcData[index + 7] === 0x0a
-    ) {
-      return index;
-    }
-  }
-  return undefined;
-}
-
-async function fixPng(rawPngData: Uint8Array): Promise<Blob> {
+async function recolorPng(input: Blob): Promise<Blob> {
   // Get canvas and context
-  const canvas = document.getElementById("work-canvas") as HTMLCanvasElement;
+  const canvas = document.getElementById("recolor-canvas") as HTMLCanvasElement;
   const context = canvas.getContext("2d") as CanvasRenderingContext2D;
 
   // Create image and wait until it's loaded
-  const imageUrl = URL.createObjectURL(new Blob([rawPngData]));
+  const imageUrl = URL.createObjectURL(input);
   const image = new Image();
   image.src = imageUrl;
   await image.decode();
@@ -156,7 +101,9 @@ async function fixPng(rawPngData: Uint8Array): Promise<Blob> {
   canvas.width = image.width;
   canvas.height = image.height;
 
-  // Draw image on canvas and get pixel data
+  // Draw image on canvas and get pixel data.
+  // NOTE: actual pixel data may differ from raw pixel data depending on the browser.
+  // See spec https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-getimagedata
   context.drawImage(image, 0, 0);
   const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
   const pixelData = imageData.data;
@@ -168,30 +115,43 @@ async function fixPng(rawPngData: Uint8Array): Promise<Blob> {
     pixelData[i + 3] = 255;
   }
 
-  // Replace image data and extract fixed image blob
+  // Replace image data and extract recolored image
   context.putImageData(imageData, 0, 0);
-  const blob = await canvasToBlob(canvas);
+  const output = await writeCanvasToBlob(canvas);
 
   // Revoke temporary object url
   URL.revokeObjectURL(imageUrl);
 
-  return blob;
+  return output;
 }
 
-async function canvasToBlob(canvas: HTMLCanvasElement): Promise<Blob> {
-  // Promisify `canvas.toBlob`
-  return new Promise((resolve, reject) => {
-    canvas.toBlob(
-      (blob) => {
-        if (!blob) {
-          reject("canvasToBlob: cannot transform canvas to blob");
-          return;
-        }
-        resolve(blob);
-      },
-      "image/png",
-      // Image quality (0 to 1)
-      1.0
-    );
-  });
+async function scalePng(input: Blob, scale: number): Promise<Blob> {
+  // Get canvas and context
+  const canvas = document.getElementById("scale-canvas") as HTMLCanvasElement;
+  const context = canvas.getContext("2d") as CanvasRenderingContext2D;
+
+  // Create image and wait until it's loaded
+  const imageUrl = URL.createObjectURL(input);
+  const image = new Image();
+  image.src = imageUrl;
+  await image.decode();
+
+  // Resize canvas to fit scaled image
+  canvas.width = scale * image.width;
+  canvas.height = scale * image.height;
+
+  // Disable image smoothing for sharp pixel art scaling
+  context.imageSmoothingEnabled = false;
+
+  // Set scaling factor
+  context.scale(scale, scale);
+
+  // Draw image on canvas
+  context.drawImage(image, 0, 0);
+  const output = await writeCanvasToBlob(canvas);
+
+  // Revoke temporary object url
+  URL.revokeObjectURL(imageUrl);
+
+  return output;
 }

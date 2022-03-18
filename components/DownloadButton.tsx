@@ -6,9 +6,7 @@ export function DownloadButton() {
   const nonograms = useStore(nonogramsSelector);
   const downloadNonograms = async () => {
     const blob = await downloadZip(
-      nonograms.map(({ pngFile }) => {
-        return pngFile;
-      })
+      nonograms.map(({ pngFile }) => pngFile)
     ).blob();
     saveAs(blob, "nonograms.zip");
   };

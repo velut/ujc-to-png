@@ -1,15 +1,13 @@
 import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
-import { loadingSelector, setNonogramsSelector, useStore } from "../lib/store";
+import { loadingSelector, setUjcFilesSelector, useStore } from "../lib/store";
 
 export function Dropzone() {
   const loading = useStore(loadingSelector);
-  const setNonograms = useStore(setNonogramsSelector);
+  const setUjcFiles = useStore(setUjcFilesSelector);
   const onDrop = useCallback(
-    (acceptedFiles: File[]) => {
-      setNonograms(acceptedFiles);
-    },
-    [setNonograms]
+    (acceptedFiles: File[]) => setUjcFiles(acceptedFiles),
+    [setUjcFiles]
   );
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
@@ -20,7 +18,7 @@ export function Dropzone() {
   return (
     <div
       {...getRootProps()}
-      className="rounded-xl border-2 border-dashed border-gray-500 bg-gray-200 px-4 py-12 text-center dark:bg-stone-700"
+      className="rounded-xl border-2 border-dashed border-stone-500 bg-stone-200 px-4 py-12 text-center dark:bg-stone-700"
     >
       <input {...getInputProps()} />
       {loading ? (

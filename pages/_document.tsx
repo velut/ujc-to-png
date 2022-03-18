@@ -5,9 +5,10 @@ export default function Document() {
     <Html lang="en" className="dark:bg-stone-800 dark:text-white">
       <Head />
       <body>
-        {/* Canvas needed to work on images */}
+        {/* Canvases needed to work on images */}
         <div className="hidden">
-          <canvas id="work-canvas" />
+          <canvas id="recolor-canvas" />
+          <canvas id="scale-canvas" />
         </div>
 
         <Main />

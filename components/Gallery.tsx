@@ -37,8 +37,11 @@ export function Gallery() {
       </div>
 
       <div className="mt-12 flex flex-wrap justify-center gap-8">
-        {nonograms.map(({ ujcFilename, pngFile, pngFileObjectUrl }) => (
-          <div key={ujcFilename} className="rounded border border-gray-500 p-4">
+        {nonograms.map(({ pngFile, pngFileObjectUrl }) => (
+          <div
+            key={pngFile.name}
+            className="rounded border border-stone-500 p-4 dark:bg-stone-700"
+          >
             <Image
               src={pngFileObjectUrl}
               alt={pngFile.name}

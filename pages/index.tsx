@@ -3,6 +3,7 @@ import NextHead from "next/head";
 import Link from "next/link";
 import { Dropzone } from "../components/Dropzone";
 import { Gallery } from "../components/Gallery";
+import { ImageOutputModeSelector } from "../components/ImageOutputModeSelector";
 
 const Home: NextPage = () => {
   const pageTitle =
@@ -89,6 +90,7 @@ const Home: NextPage = () => {
         <section>
           <h2 className="text-2xl">Your Nonograms</h2>
           <Gallery />
+          <ImageOutputModeSelector />
         </section>
 
         <section className="space-y-4">
@@ -182,7 +184,7 @@ const Home: NextPage = () => {
         </section>
 
         <div>
-          <footer className="mt-12 border-t border-gray-500 py-6">
+          <footer className="mt-12 border-t border-stone-500 py-6">
             <p>
               Website by{" "}
               <a
