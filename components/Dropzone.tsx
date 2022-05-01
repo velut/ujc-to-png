@@ -11,7 +11,9 @@ export function Dropzone() {
   );
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
-    accept: ".ujc",
+    accept: {
+      "application/octet-stream": [".ujc"],
+    },
     disabled: loading,
   });
 
