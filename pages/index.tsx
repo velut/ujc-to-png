@@ -58,22 +58,24 @@ const Home: NextPage = () => {
             app to standard <span className="font-mono">.png</span> images.
           </p>
           <p>
-            To start, open the Nonograms Katana app, then tap on the settings
-            icon in the top right corner; once in the settings, open the
-            sub-menu named <span className="font-mono italic">Other</span> and
-            select{" "}
-            <span className="font-mono italic">
+            To start, open the Nonograms Katana Android app, then tap on the{" "}
+            <span className="font-mono font-bold italic">Settings</span> icon in
+            the top right corner; once in the settings, open the sub-menu named{" "}
+            <span className="font-mono font-bold italic">Other</span> and select{" "}
+            <span className="font-mono font-bold italic">
               Save progress to file (zip)
             </span>{" "}
             to export an archive of your data.
           </p>
           <p>
             Using your preferred file manager, extract the{" "}
-            <span className="font-mono italic">NonogramsKatana.zip</span>{" "}
+            <span className="font-mono font-bold italic">
+              NonogramsKatana.zip
+            </span>{" "}
             archive so that the sub-folder named{" "}
-            <span className="font-mono italic">MyNonograms</span> becomes
-            accessible. This folder contains all the nonograms created by you
-            saved as <span className="font-mono">.ujc</span> files.
+            <span className="font-mono font-bold italic">MyNonograms</span>{" "}
+            becomes accessible. This folder contains all the nonograms created
+            by you saved as <span className="font-mono">.ujc</span> files.
           </p>
           <p>
             Now, you can drag and drop these files in the area below;
@@ -100,14 +102,14 @@ const Home: NextPage = () => {
             <h3 className="text-lg">How does this work?</h3>
             <p>
               This tool analyzes the <span className="font-mono">.ujc</span>{" "}
-              files exported from Nonograms Katana and extracts the png images
-              representing the nonogram designs; to learn more, you can review
-              the source code{" "}
+              files exported from the Nonograms Katana app and extracts the png
+              images representing the nonogram designs; to learn more, you can
+              review the{" "}
               <a
                 className="underline"
                 href="https://github.com/velut/ujc-to-png"
               >
-                available on GitHub
+                source code available on GitHub
               </a>
               .
             </p>
@@ -124,7 +126,7 @@ const Home: NextPage = () => {
           <div className="space-y-2">
             <h3 className="text-lg">Are my nonograms private?</h3>
             <p>
-              Yes. The tool works entirely in your browser and no file ever
+              Yes. This tool works entirely in your browser and no file ever
               leaves your device.
             </p>
           </div>
@@ -133,15 +135,18 @@ const Home: NextPage = () => {
             <h3 className="text-lg">
               Can I download nonograms from other authors?
             </h3>
-            <p>No. This tool does not download nonograms from the app.</p>
+            <p>
+              No. This tool does not download nonograms from the Nonograms
+              Katana app.
+            </p>
           </div>
 
           <div className="space-y-2">
             <h3 className="text-lg">How many nonograms can I convert?</h3>
             <p>
-              Right now there is no limit. Note however that the more nonograms
-              you select the slower the process will be, especially on less
-              powerful devices.
+              As many as you want. Note however that the more nonograms you
+              select the slower the process will be, especially on less powerful
+              devices.
             </p>
           </div>
 
@@ -158,11 +163,50 @@ const Home: NextPage = () => {
           </div>
 
           <div className="space-y-2">
-            <h3 className="text-lg">Why are images so small?</h3>
+            <h3 className="text-lg">Why are the extracted images so small?</h3>
             <p>
-              Images are converted respecting the original dimensions of the
-              nonograms. For example, a 20x20 nonogram becomes a 20 by 20 pixels
-              image.
+              When the <span className="italic">Raw Images</span> option is
+              selected, images are extracted as-is from the{" "}
+              <span className="font-mono">.ujc</span> files and the final
+              dimensions reflect the original dimensions of the nonograms. For
+              example, a 20x20 nonogram becomes a 20 by 20 pixels image.
+            </p>
+            <p>
+              To save images in a larger format, select one of the{" "}
+              <span className="italic">Recolor and scale</span> options. For
+              example, scaling a 20x20 nonogram with the{" "}
+              <span className="italic">Recolor and scale 25x</span> option
+              produces a 500 by 500 pixels image.
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="text-lg">
+              Why do some images have transparent backgrounds?
+            </h3>
+            <p>
+              When the <span className="italic">Raw Images</span> option is
+              selected, images are extracted as-is from the{" "}
+              <span className="font-mono">.ujc</span> files, which represent the
+              background color of colored nonograms as transparent.
+            </p>
+            <p>
+              To fix the final colors, select one of the{" "}
+              <span className="italic">Recolor</span> options. Note however that
+              due to the way that browsers work, this is a lossy operation and
+              the final colors may be slightly different from the original ones.
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="text-lg">
+              Why can&apos;t I save my nonograms from the Nonograms Katana iOS
+              app?
+            </h3>
+            <p>
+              The Android and iOS versions of the Nonograms Katana app are
+              different. Unfortunately, the iOS version does not currently
+              support saving your nonograms to a local zip file.
             </p>
           </div>
 
