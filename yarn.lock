@@ -947,12 +947,12 @@ file-saver@^2.0.5:
   resolved "https://registry.yarnpkg.com/file-saver/-/file-saver-2.0.5.tgz#d61cfe2ce059f414d899e9dd6d4107ee25670c38"
   integrity sha512-P9bmyZ3h/PRG+Nzga+rbdI4OEpNDzAVyy74uVO9ATgzLK6VtAsYybF/+TOCvrc0MO793d6+42lLyZTw7/ArVzA==
 
-file-selector@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/file-selector/-/file-selector-0.5.0.tgz#21c7126dc9728b31a2742d91cab20d55e67e4fb4"
-  integrity sha512-s8KNnmIDTBoD0p9uJ9uD0XY38SCeBOtj0UMXyQSLg1Ypfrfj8+dAvwsLjYQkQ2GjhVtp2HrnF5cJzMhBjfD8HA==
+file-selector@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/file-selector/-/file-selector-0.6.0.tgz#fa0a8d9007b829504db4d07dd4de0310b65287dc"
+  integrity sha512-QlZ5yJC0VxHxQQsQhXvBaC7VRJ2uaxTf+Tfpu4Z/OcVQJVpZO+DGU0rkoVW5ce2SccxugvpBJoMvUs59iILYdw==
   dependencies:
-    tslib "^2.0.3"
+    tslib "^2.4.0"
 
 fill-range@^7.0.1:
   version "7.0.1"
@@ -1739,13 +1739,13 @@ react-dom@18.1.0:
     loose-envify "^1.1.0"
     scheduler "^0.22.0"
 
-react-dropzone@^14.0.0:
-  version "14.0.0"
-  resolved "https://registry.yarnpkg.com/react-dropzone/-/react-dropzone-14.0.0.tgz#3b331f333a5d9d483e938f620b64235786713062"
-  integrity sha512-YOU/JrRSYYXNc/C3OlaFJIL+COMueD54qBJ1/gfNY2XEJUmlpyl/8AJOgsTYnyA/WZWeKqtsRp0rtVAz/W0+sA==
+react-dropzone@^14.2.1:
+  version "14.2.1"
+  resolved "https://registry.yarnpkg.com/react-dropzone/-/react-dropzone-14.2.1.tgz#aad17e06290723358398a7be76fb38ecf6d77c1a"
+  integrity sha512-jzX6wDtAjlfwZ+Fbg+G17EszWUkQVxhMTWMfAC9qSUq7II2pKglHA8aarbFKl0mLpRPDaNUcy+HD/Sf4gkf76Q==
   dependencies:
     attr-accept "^2.2.2"
-    file-selector "^0.5.0"
+    file-selector "^0.6.0"
     prop-types "^15.8.1"
 
 react-is@^16.13.1:
@@ -2013,10 +2013,10 @@ tslib@^1.8.1:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2.0.3:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
-  integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
+tslib@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.4.0.tgz#7cecaa7f073ce680a05847aa77be941098f36dc3"
+  integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
 
 tsutils@^3.21.0:
   version "3.21.0"
