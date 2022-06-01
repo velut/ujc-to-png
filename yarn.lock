@@ -459,10 +459,10 @@ chokidar@^3.5.3:
   optionalDependencies:
     fsevents "~2.3.2"
 
-client-zip@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/client-zip/-/client-zip-2.2.0.tgz#d3aa0c569f035d05574ffd5b611ee3f1eb841611"
-  integrity sha512-71vYwCFSYja9OUwpP3wWbQHim81o8A2DQ0LzSGFrx5ZoBoMG1+tjCXb+iYcMHV6QRwgem5yJVO9+vdjbTAuzyQ==
+client-zip@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/client-zip/-/client-zip-2.2.2.tgz#58dcc66f2534954a50b506d2bd864b51ba98370d"
+  integrity sha512-Jh1Sz/iBTfYuLQv6yKzrrXofJy17Q7YRhBfh5HH/6i4Z+ACjTfmRJllWQKoe4eFWwXeUoOjEathqXfuGGX4jhg==
 
 clsx@^1.1.1:
   version "1.1.1"
