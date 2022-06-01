@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "client-zip": "^2.2.0",
+    "client-zip": "^2.2.2",
     "clsx": "^1.1.1",
     "file-saver": "^2.0.5",
     "next": "12.1.5",
