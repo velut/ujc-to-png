@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import NextHead from "next/head";
+import { Link } from "../components/Link";
 
 const PrivacyPage: NextPage = () => {
   const pageTitle = "ujc to png | Privacy Policy";
@@ -52,10 +53,8 @@ const PrivacyPage: NextPage = () => {
           <h2 className="text-2xl">Analytics</h2>
           <p>
             To measure traffic and usage statistics for this website, we use{" "}
-            <a className="underline" href="https://plausible.io/">
-              Plausible
-            </a>
-            , a privacy-friendly web analytics tool.
+            <Link href="https://plausible.io/">Plausible</Link>, a
+            privacy-friendly web analytics tool.
           </p>
 
           <p>
@@ -66,13 +65,8 @@ const PrivacyPage: NextPage = () => {
           <p>
             To learn more about the data collected by Plausible, you can visit
             their{" "}
-            <a className="underline" href="https://plausible.io/data-policy">
-              data policy
-            </a>{" "}
-            and{" "}
-            <a className="underline" href="https://plausible.io/privacy">
-              privacy policy
-            </a>{" "}
+            <Link href="https://plausible.io/data-policy">data policy</Link> and{" "}
+            <Link href="https://plausible.io/privacy">privacy policy</Link>{" "}
             pages.
           </p>
         </section>
@@ -81,21 +75,16 @@ const PrivacyPage: NextPage = () => {
           <h2 className="text-2xl">Hosting</h2>
           <p>
             This website is hosted on{" "}
-            <a className="underline" href="https://vercel.com/">
-              Vercel
-            </a>
-            , which may collect some data to provide its hosting services.
+            <Link href="https://vercel.com/">Vercel</Link>, which may collect
+            some data to provide its hosting services.
           </p>
 
           <p>
             To learn more about the data collected by Vercel, you can visit
             their{" "}
-            <a
-              className="underline"
-              href="https://vercel.com/legal/privacy-policy"
-            >
+            <Link href="https://vercel.com/legal/privacy-policy">
               privacy policy
-            </a>{" "}
+            </Link>{" "}
             page.
           </p>
         </section>
@@ -117,14 +106,8 @@ const PrivacyPage: NextPage = () => {
           <h2 className="text-2xl">Contact information</h2>
           <p>
             You can contact the website author on{" "}
-            <a className="underline" href="https://twitter.com/EdoardoScibona">
-              Twitter
-            </a>{" "}
-            or by{" "}
-            <a className="underline" href="mailto:info@jsdocs.io">
-              email
-            </a>
-            .
+            <Link href="https://twitter.com/EdoardoScibona">Twitter</Link> or by{" "}
+            <Link href="mailto:info@jsdocs.io">email</Link>.
           </p>
         </section>
 

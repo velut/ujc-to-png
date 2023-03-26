@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
 import NextHead from "next/head";
-import Link from "next/link";
 import { Dropzone } from "../components/Dropzone";
 import { Gallery } from "../components/Gallery";
 import { ImageOutputModeSelector } from "../components/ImageOutputModeSelector";
+import { Link } from "../components/Link";
 
 const Home: NextPage = () => {
   const pageTitle =
@@ -40,12 +40,9 @@ const Home: NextPage = () => {
           <h1 className="text-center text-4xl">ujc to png</h1>
           <p className="px-4 text-center text-lg sm:px-12 md:px-28 lg:px-64">
             Export, convert and save your puzzle designs from{" "}
-            <a
-              className="underline"
-              href="https://play.google.com/store/apps/details?id=com.ucdevs.jcross"
-            >
+            <Link href="https://play.google.com/store/apps/details?id=com.ucdevs.jcross">
               Nonograms Katana
-            </a>{" "}
+            </Link>{" "}
             as simple png images.
           </p>
         </section>
@@ -105,12 +102,9 @@ const Home: NextPage = () => {
               files exported from the Nonograms Katana app and extracts the png
               images representing the nonogram designs; to learn more, you can
               review the{" "}
-              <a
-                className="underline"
-                href="https://github.com/velut/ujc-to-png"
-              >
+              <Link href="https://github.com/velut/ujc-to-png">
                 source code available on GitHub
-              </a>
+              </Link>
               .
             </p>
           </div>
@@ -216,12 +210,9 @@ const Home: NextPage = () => {
             </h3>
             <p>
               Please{" "}
-              <a
-                className="underline"
-                href="https://github.com/velut/ujc-to-png/issues"
-              >
+              <Link href="https://github.com/velut/ujc-to-png/issues">
                 open an issue on Github
-              </a>
+              </Link>
               .
             </p>
           </div>
@@ -231,25 +222,14 @@ const Home: NextPage = () => {
           <footer className="mt-12 border-t border-stone-500 py-6">
             <p>
               Website by{" "}
-              <a
-                className="underline"
-                href="https://twitter.com/EdoardoScibona"
-              >
+              <Link href="https://twitter.com/EdoardoScibona">
                 Edoardo Scibona
-              </a>
+              </Link>
             </p>
 
             <div className="mt-4 flex flex-wrap gap-4">
-              <Link href="/privacy">
-                <a className="underline">Privacy Policy</a>
-              </Link>
-
-              <a
-                className="underline"
-                href="https://github.com/velut/ujc-to-png"
-              >
-                GitHub
-              </a>
+              <Link href="/privacy">Privacy Policy</Link>
+              <Link href="https://github.com/velut/ujc-to-png">GitHub</Link>
             </div>
           </footer>
         </div>
