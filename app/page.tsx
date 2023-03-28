@@ -1,5 +1,6 @@
 import { compress } from "compress-tag";
 import type { Metadata } from "next";
+import Header from "./Header";
 import Link from "./Link";
 
 const title = "Download your Nonograms Katana puzzles as images";
@@ -24,15 +25,7 @@ export const metadata: Metadata = {
 export default function IndexPage() {
   return (
     <article className="prose dark:prose-invert lg:prose-lg">
-      <h1 className="text-center">ujc to png</h1>
-      <p className="text-center">
-        Download your puzzle designs from{" "}
-        <Link href="https://play.google.com/store/apps/details?id=com.ucdevs.jcross">
-          Nonograms Katana
-        </Link>{" "}
-        as simple images.
-      </p>
-
+      <Header />
       <hr />
 
       <h2>Usage</h2>
