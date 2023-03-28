@@ -16,7 +16,7 @@ export default function Footer() {
           <Link href="/privacy">Privacy Policy</Link>
         </li>
         <li>
-          <Link href="https://github.com/velut/ujc-to-png">GitHub</Link>
+          <Link href="https://github.com/velut/ujc-to-png">GitHub Project</Link>
         </li>
       </ul>
     </>
