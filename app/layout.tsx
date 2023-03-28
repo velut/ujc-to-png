@@ -1,4 +1,6 @@
 import { Metadata } from "next";
+import Footer from "./Footer";
+import Header from "./Header";
 import "./globals.css";
 
 const title = {
@@ -24,7 +26,15 @@ export default function RootLayout({
     <html lang="en">
       <body className="dark:bg-gray-800">
         <div className="container mx-auto flex justify-center p-8 md:p-12">
-          {children}
+          <article className="prose dark:prose-invert lg:prose-lg">
+            <Header />
+            <hr />
+
+            {children}
+
+            <hr />
+            <Footer />
+          </article>
         </div>
       </body>
     </html>

@@ -1,8 +1,6 @@
 import { compress } from "compress-tag";
 import type { Metadata } from "next";
 import FAQ from "./FAQ";
-import Footer from "./Footer";
-import Header from "./Header";
 import Usage from "./Usage";
 
 const title = "Download your Nonograms Katana puzzles as images";
@@ -26,21 +24,11 @@ export const metadata: Metadata = {
 
 export default function IndexPage() {
   return (
-    <article className="prose dark:prose-invert lg:prose-lg">
-      <Header />
-      <hr />
-
+    <>
       <Usage />
-
       <h2>TODO: Dropzone</h2>
-
       <h2>TODO: Gallery</h2>
-
       <FAQ />
-
-      <hr />
-
-      <Footer />
-    </article>
+    </>
   );
 }
