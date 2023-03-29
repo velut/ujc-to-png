@@ -3,19 +3,13 @@ import Link from "../Link";
 
 const title = "Privacy Policy";
 const description = "Privacy policy for ujc to png.";
+const url = "https://ujc-to-png.vercel.app/privacy";
 
 export const metadata: Metadata = {
   title,
   description,
-  openGraph: {
-    title,
-    description,
-    url: "https://ujc-to-png.vercel.app/privacy",
-  },
-  twitter: {
-    title,
-    description,
-  },
+  openGraph: { title, description, url },
+  twitter: { title, description },
 };
 
 export default function PrivacyPage() {
