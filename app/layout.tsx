@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Footer from "./Footer";
 import Header from "./Header";
+import Providers from "./Providers";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -18,17 +19,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="dark:bg-gray-800">
-        <div className="container mx-auto flex justify-center p-8 md:p-12">
-          <article className="prose dark:prose-invert lg:prose-lg">
-            <Header />
-            <hr />
+        <Providers>
+          <div className="container mx-auto flex justify-center p-8 md:p-12">
+            <article className="prose dark:prose-invert lg:prose-lg">
+              <Header />
+              <hr />
 
-            {children}
+              {children}
 
-            <hr />
-            <Footer />
-          </article>
-        </div>
+              <hr />
+              <Footer />
+            </article>
+          </div>
+        </Providers>
       </body>
     </html>
   );
