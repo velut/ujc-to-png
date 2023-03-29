@@ -1,6 +1,9 @@
 import { compress } from "compress-tag";
 import type { Metadata } from "next";
+import Dropzone from "./Dropzone";
 import FAQ from "./FAQ";
+import Gallery from "./Gallery";
+import Options from "./Options";
 import Usage from "./Usage";
 
 const title = "Download your Nonograms Katana puzzles as images";
@@ -26,8 +29,9 @@ export default function IndexPage() {
   return (
     <>
       <Usage />
-      <h2>TODO: Dropzone</h2>
-      <h2>TODO: Gallery</h2>
+      <Dropzone />
+      <Options />
+      <Gallery />
       <FAQ />
     </>
   );
