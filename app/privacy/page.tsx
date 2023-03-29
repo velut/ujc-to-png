@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "../Link";
 
-const title = "Privacy Policy";
+const title = "Privacy Policy | ujc to png";
 const description = "Privacy policy for ujc to png.";
 const url = "https://ujc-to-png.vercel.app/privacy";
 

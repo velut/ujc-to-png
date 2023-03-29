@@ -3,15 +3,8 @@ import Footer from "./Footer";
 import Header from "./Header";
 import "./globals.css";
 
-const title = {
-  default: "ujc to png",
-  template: "%s | ujc to png",
-};
-
 export const metadata: Metadata = {
-  title,
   openGraph: {
-    title,
     siteName: "ujc to png",
     type: "website",
   },

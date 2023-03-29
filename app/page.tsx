@@ -6,7 +6,7 @@ import Gallery from "./Gallery";
 import Options from "./Options";
 import Usage from "./Usage";
 
-const title = "Download your Nonograms Katana puzzles as images";
+const title = "Download your Nonograms Katana puzzles as images | ujc to png";
 const description = compress`
 Export, resize, and download your pictures from the game Nonograms Katana.
 `;
