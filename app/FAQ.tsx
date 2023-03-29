@@ -43,12 +43,11 @@ export default function FAQ() {
         </li>
         <li>
           <p>
-            <strong>Can I download nonograms from other authors?</strong>
+            <strong>Can I download nonograms made by other authors?</strong>
           </p>
           <p>
-            <strong>No</strong>. To respect the their work, this tool does not
-            allow you to download nonograms from other authors available on the
-            Nonograms Katana app.
+            <strong>No</strong>. To respect their work, this tool does not allow
+            you to download nonograms made by other authors.
           </p>
         </li>
         <li>
@@ -81,9 +80,9 @@ export default function FAQ() {
           <p>
             When the <code>Raw Images</code> option is selected, images are
             extracted as-is from the <code>.ujc</code> files. This means that
-            the final dimensions of an image correspond to the original
-            dimensions of its nonogram. For example, a 20x20 nonogram becomes a
-            tiny 20x20 pixels image.
+            the final image dimensions correspond to the original dimensions of
+            the nonogram. For example, a 20x20 nonogram becomes a tiny 20x20
+            pixels image.
           </p>
           <p>
             To save images in a larger format, select one of the{" "}

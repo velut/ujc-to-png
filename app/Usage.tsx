@@ -1,3 +1,5 @@
+import Link from "./Link";
+
 export default function Usage() {
   return (
     <>
@@ -15,8 +17,11 @@ export default function Usage() {
           </p>
           <p>
             To start, open the Nonograms Katana Android app, then tap on the{" "}
-            <code>Settings</code> icon in the top right corner; once in the
-            settings, open the sub-menu named <code>Other</code> and select{" "}
+            <Link href="https://nonograms-katana.fandom.com/wiki/Settings">
+              <code>Settings</code>
+            </Link>{" "}
+            icon in the top right corner; once in the settings, open the menu
+            named <code>Other</code> and select{" "}
             <code>Save progress to file (zip)</code> to export an archive of
             your data.
           </p>
@@ -27,9 +32,9 @@ export default function Usage() {
           </p>
           <p>
             Using your preferred file manager, extract the{" "}
-            <code>NonogramsKatana.zip</code> archive so that the sub-folder
-            named <code>MyNonograms</code> becomes accessible. This folder
-            contains all your nonograms saved as <code>.ujc</code> files.
+            <code>NonogramsKatana.zip</code> archive so that the folder named{" "}
+            <code>MyNonograms</code> becomes accessible. This folder contains
+            all your nonograms saved as <code>.ujc</code> files.
           </p>
         </li>
         <li>
@@ -38,10 +43,10 @@ export default function Usage() {
           </p>
           <p>
             Now, you can drag and drop the <code>.ujc</code> files in the area
-            below; alternatively, you can click or tap on the area to open a
-            file picker dialog where you can select the files. After a short
-            while, the converted images will appear in the gallery below ready
-            to download.
+            below; alternatively, you can tap on the same area to open a file
+            picker dialog where you can select the files. After a short while,
+            the converted images will appear in the gallery below ready to
+            download.
           </p>
         </li>
       </ul>
