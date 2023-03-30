@@ -1,27 +1,22 @@
 "use client";
 
+import { useAtomValue, useSetAtom } from "jotai";
 import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import { twMerge } from "tailwind-merge";
+import { loadingAtom, ujcFilesAtom } from "./store";
 
 export default function Dropzone() {
-  //   const loading = useStore(loadingSelector);
-  //   const setUjcFiles = useStore(setUjcFilesSelector);
-
-  const isProcessing = false;
-  const onDrop = useCallback(
-    // (acceptedFiles: File[]) => setUjcFiles(acceptedFiles),
-    // [setUjcFiles]
-    (acceptedFiles: File[]) => {},
-    []
-  );
+  const isLoading = useAtomValue(loadingAtom);
+  const setUjcFiles = useSetAtom(ujcFilesAtom);
+  const onDrop = useCallback(setUjcFiles, [setUjcFiles]);
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
     accept: {
       "application/octet-stream": [".ujc"],
       "image/png": [".png"],
     },
-    disabled: isProcessing,
+    disabled: isLoading,
   });
 
   return (
@@ -36,7 +31,7 @@ export default function Dropzone() {
         )}
       >
         <input {...getInputProps()} />
-        {isProcessing ? (
+        {isLoading ? (
           <p className="motion-safe:animate-pulse">
             Processing nonograms, please wait...
           </p>
