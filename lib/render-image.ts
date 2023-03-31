@@ -1,7 +1,7 @@
 import { recolorImage } from "./recolor-image";
 import { scaleImage } from "./scale-image";
 
-export type RenderImageOptions = {
+export type RenderOptions = {
   /* True if the images should be recolored (lossy operation). */
   recolor: boolean;
 
@@ -11,7 +11,7 @@ export type RenderImageOptions = {
 
 export const renderImage = async (
   blob: Blob,
-  { recolor, scale }: RenderImageOptions
+  { recolor, scale }: RenderOptions
 ): Promise<Blob> => {
   let image = blob;
 
