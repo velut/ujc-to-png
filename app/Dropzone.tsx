@@ -4,12 +4,12 @@ import { useAtomValue, useSetAtom } from "jotai";
 import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import { twMerge } from "tailwind-merge";
-import { loadingAtom, ujcFilesAtom } from "./store";
+import { loadingAtom, processFilesAtom } from "./store";
 
 export default function Dropzone() {
   const isLoading = useAtomValue(loadingAtom);
-  const setUjcFiles = useSetAtom(ujcFilesAtom);
-  const onDrop = useCallback(setUjcFiles, [setUjcFiles]);
+  const processFiles = useSetAtom(processFilesAtom);
+  const onDrop = useCallback(processFiles, [processFiles]);
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
     accept: {
