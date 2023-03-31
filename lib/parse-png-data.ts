@@ -13,11 +13,11 @@ const isPngStart = (data: Uint8Array, index: number) => {
   );
 };
 
-export const parsePngData = (buffer: ArrayBuffer): Uint8Array => {
+export const parsePngData = (buffer: ArrayBuffer): Blob => {
   const data = new Uint8Array(buffer);
   for (let index = 0; index + 7 < data.length; index++) {
     if (isPngStart(data, index)) {
-      return data.subarray(index);
+      return new Blob([data.subarray(index)]);
     }
   }
   throw new Error("parsePngData: buffer does not contain png data");
