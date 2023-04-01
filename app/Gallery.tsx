@@ -33,7 +33,7 @@ export default function Gallery() {
             )}
           >
             {images.map((image) => (
-              <GalleryImage key={image.name} image={image} />
+              <GalleryImage key={image.file.name} url={image.url} />
             ))}
           </div>
         </>

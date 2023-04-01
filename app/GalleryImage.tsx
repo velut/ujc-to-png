@@ -4,9 +4,7 @@
 
 import { twMerge } from "tailwind-merge";
 
-export default function GalleryImage({ image }: { image: File }) {
-  const url = URL.createObjectURL(image);
-
+export default function GalleryImage({ url }: { url: string }) {
   return (
     <img
       className={twMerge(
@@ -18,9 +16,6 @@ export default function GalleryImage({ image }: { image: File }) {
       )}
       src={url}
       alt=""
-      onLoad={() => {
-        URL.revokeObjectURL(url);
-      }}
     />
   );
 }

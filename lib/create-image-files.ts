@@ -1,26 +1,33 @@
 import { Nonogram } from "./nonogram";
 import { RenderOptions, renderImage } from "./render-image";
 
+export type ImageFile = {
+  file: File;
+  url: string;
+};
+
 const createImageFile = async (
   nonogram: Nonogram,
   renderOptions: RenderOptions
-) => {
+): Promise<ImageFile> => {
   const image = await renderImage(nonogram.pngData, renderOptions);
-  return new File([image], `${nonogram.filename}.png`, {
+  const file = new File([image], `${nonogram.filename}.png`, {
     type: "image/png",
     lastModified: new Date(nonogram.timestamp).getTime(),
   });
+  const url = URL.createObjectURL(file);
+  return { file, url };
 };
 
 export const createImageFiles = async (
   nonograms: Nonogram[],
   renderOptions: RenderOptions
-): Promise<File[]> => {
+): Promise<ImageFile[]> => {
   return (
     await Promise.allSettled(
       nonograms.map((nonogram) => createImageFile(nonogram, renderOptions))
     )
   )
     .flatMap((result) => (result.status === "fulfilled" ? result.value : []))
-    .sort((a, b) => a.lastModified - b.lastModified);
+    .sort((a, b) => a.file.lastModified - b.file.lastModified);
 };
