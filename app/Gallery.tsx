@@ -2,6 +2,7 @@
 
 import { useAtomValue } from "jotai";
 import { twMerge } from "tailwind-merge";
+import DownloadButton from "./DownloadButton";
 import GalleryImage from "./GalleryImage";
 import { imagesAtom, loadingAtom } from "./store";
 
@@ -24,6 +25,7 @@ export default function Gallery() {
         </p>
       ) : (
         <>
+          <DownloadButton />
           <div
             className={twMerge(
               "not-prose",
@@ -36,6 +38,7 @@ export default function Gallery() {
               <GalleryImage key={image.file.name} url={image.url} />
             ))}
           </div>
+          <DownloadButton />
         </>
       )}
     </>
