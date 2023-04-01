@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import NextHead from "next/head";
-import { Link } from "../components/Link";
+import { Link } from "../../components/Link";
 
 const PrivacyPage: NextPage = () => {
   const pageTitle = "ujc to png | Privacy Policy";

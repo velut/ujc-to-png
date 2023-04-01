@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
 import NextHead from "next/head";
-import { Dropzone } from "../components/Dropzone";
-import { Gallery } from "../components/Gallery";
-import { ImageOutputModeSelector } from "../components/ImageOutputModeSelector";
-import { Link } from "../components/Link";
+import { Dropzone } from "../../components/Dropzone";
+import { Gallery } from "../../components/Gallery";
+import { ImageOutputModeSelector } from "../../components/ImageOutputModeSelector";
+import { Link } from "../../components/Link";
 
 const Home: NextPage = () => {
   const pageTitle =
