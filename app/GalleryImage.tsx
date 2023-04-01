@@ -8,20 +8,19 @@ export default function GalleryImage({ image }: { image: File }) {
   const url = URL.createObjectURL(image);
 
   return (
-    <div
+    <img
       className={twMerge(
-        "flex h-32 w-32 items-center justify-center rounded p-2",
-        "bg-gray-300 dark:bg-gray-700"
+        "pixel-art h-32 w-32 rounded border object-contain shadow",
+        "bg-white", // Background color for transparent backgrounds.
+        "hover:shadow-lg",
+        "border-gray-200 dark:border-gray-800",
+        "hover:border-gray-400 dark:hover:border-gray-600"
       )}
-    >
-      <img
-        className="pixel-art h-full w-full bg-white object-contain"
-        src={url}
-        alt=""
-        onLoad={() => {
-          URL.revokeObjectURL(url);
-        }}
-      />
-    </div>
+      src={url}
+      alt=""
+      onLoad={() => {
+        URL.revokeObjectURL(url);
+      }}
+    />
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useAtomValue } from "jotai";
+import { twMerge } from "tailwind-merge";
 import GalleryImage from "./GalleryImage";
 import { imagesAtom, loadingAtom } from "./store";
 
@@ -23,7 +24,14 @@ export default function Gallery() {
         </p>
       ) : (
         <>
-          <div className="flex flex-wrap items-center justify-center gap-8">
+          <div
+            className={twMerge(
+              "not-prose",
+              "flex flex-wrap items-center justify-center gap-6 rounded-xl border-2 border-dashed p-8",
+              "border-gray-600 dark:border-gray-400",
+              "bg-gray-100 dark:bg-gray-900"
+            )}
+          >
             {images.map((image) => (
               <GalleryImage key={image.name} image={image} />
             ))}
