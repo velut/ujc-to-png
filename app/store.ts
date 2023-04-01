@@ -16,7 +16,6 @@ const _imagesAtom = atom<File[]>([]);
 
 export const loadingAtom = atom((get) => get(_loadingAtom));
 export const nonogramsAtom = atom((get) => get(_nonogramsAtom));
-export const hasNonogramsAtom = atom((get) => get(nonogramsAtom).length > 0);
 export const imagesAtom = atom((get) => get(_imagesAtom));
 
 export const processFilesAtom = atom(null, async (get, set, files: File[]) => {
