@@ -1,3 +1,4 @@
+import { limit } from "./limit";
 import { Nonogram } from "./nonogram";
 import { RenderOptions, renderImage } from "./render-image";
 
@@ -25,7 +26,9 @@ export const createImageFiles = async (
 ): Promise<ImageFile[]> => {
   return (
     await Promise.allSettled(
-      nonograms.map((nonogram) => createImageFile(nonogram, renderOptions))
+      nonograms.map((nonogram) =>
+        limit(() => createImageFile(nonogram, renderOptions))
+      )
     )
   )
     .flatMap((result) => (result.status === "fulfilled" ? result.value : []))

@@ -1,3 +1,4 @@
+import { limit } from "./limit";
 import { Nonogram } from "./nonogram";
 import { parseFilename } from "./parse-filename";
 import { parseImageDimensions } from "./parse-image-dimensions";
@@ -14,7 +15,11 @@ export const parseNonogram = async (file: File): Promise<Nonogram> => {
 };
 
 export const parseNonograms = async (files: File[]): Promise<Nonogram[]> => {
-  return (await Promise.allSettled(files.map((file) => parseNonogram(file))))
+  return (
+    await Promise.allSettled(
+      files.map((file) => limit(() => parseNonogram(file)))
+    )
+  )
     .flatMap((result) => (result.status === "fulfilled" ? result.value : []))
     .sort((a, b) => a.timestamp.localeCompare(b.timestamp));
 };
