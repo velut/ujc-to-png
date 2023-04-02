@@ -5,8 +5,6 @@ import { parseNonograms } from "../lib/parse-nonogram";
 import { RenderOptions } from "../lib/render-image";
 import { revokeObjectUrls } from "../lib/revoke-object-urls";
 
-const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
 const _loadingAtom = atom(false);
 const _nonogramsAtom = atom<Nonogram[]>([]);
 const _renderOptionsAtom = atom<RenderOptions>({
