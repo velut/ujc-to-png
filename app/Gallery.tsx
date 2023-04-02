@@ -21,7 +21,7 @@ export default function Gallery() {
       ) : !hasImages ? (
         <p>
           No nonograms found, try adding some <code>.ujc</code> files in the
-          dropzone.
+          dropzone above.
         </p>
       ) : (
         <>
