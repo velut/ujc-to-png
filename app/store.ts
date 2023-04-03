@@ -10,6 +10,7 @@ const _nonogramsAtom = atom<Nonogram[]>([]);
 const _renderOptionsAtom = atom<RenderOptions>({
   recolor: false,
   scale: 1,
+  grid: { enabled: false, color: "#000000" },
 });
 const _imagesAtom = atom<ImageFile[]>([]);
 

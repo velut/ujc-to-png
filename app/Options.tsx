@@ -1,3 +1,4 @@
+import OptionsGrid from "./OptionsGrid";
 import OptionsRecolor from "./OptionsRecolor";
 import OptionsScale from "./OptionsScale";
 
@@ -9,6 +10,8 @@ export default function Options() {
       <OptionsRecolor />
       <hr />
       <OptionsScale />
+      <hr />
+      <OptionsGrid />
       <hr />
     </>
   );

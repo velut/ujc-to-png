@@ -7,6 +7,12 @@ export type RenderOptions = {
 
   /* Multiplier for scaling images (lossy operation). */
   scale: number;
+
+  /* Pixel grid lines (lossy operation). */
+  grid: {
+    enabled: boolean;
+    color: string;
+  };
 };
 
 export const renderImage = async (
