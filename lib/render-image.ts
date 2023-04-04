@@ -8,7 +8,7 @@ export type RenderOptions = {
   /* Multiplier for scaling images (lossy operation). */
   scale: number;
 
-  /* Pixel grid lines (lossy operation). */
+  /* Style images by adding pixel grid lines (lossy operation). */
   grid: {
     enabled: boolean;
     color: string;
