@@ -33,7 +33,7 @@ export default function OptionsGridEnable() {
     <div className="flex items-center gap-2">
       <label
         className="flex w-40 flex-none items-center gap-1"
-        title="Enable grid lines between pixels in the image for a stylized effect."
+        title="Add grid lines between pixels in the image for a stylized effect."
         htmlFor="grid-enabled-option"
       >
         Grid lines <div className="text-sm">(?)</div>
