@@ -38,7 +38,13 @@ export default function OptionsGridColor() {
         Grid lines color
       </label>
       <input
-        className={twMerge("h-10 w-full rounded sm:w-1/4", "dark:bg-gray-900")}
+        className={twMerge(
+          "h-10 w-full rounded sm:w-1/4",
+          "dark:bg-gray-900",
+          "disabled:bg-gray-300 disabled:text-gray-400",
+          "dark:disabled:bg-gray-700 dark:disabled:text-gray-600",
+          "disabled:cursor-not-allowed"
+        )}
         type="color"
         id="grid-color-option"
         name="grid-color-option"

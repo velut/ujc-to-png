@@ -40,7 +40,13 @@ export default function OptionsGridRadius() {
         Border radius
       </label>
       <input
-        className={twMerge("h-10 w-full rounded sm:w-1/4", "dark:bg-gray-900")}
+        className={twMerge(
+          "h-10 w-full rounded sm:w-1/4",
+          "dark:bg-gray-900",
+          "disabled:bg-gray-300 disabled:text-gray-400",
+          "dark:disabled:bg-gray-700 dark:disabled:text-gray-600",
+          "disabled:cursor-not-allowed"
+        )}
         type="text"
         inputMode="numeric"
         pattern="[0-9]*"
