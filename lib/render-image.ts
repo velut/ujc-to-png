@@ -1,3 +1,4 @@
+import { addGridToImage } from "./add-grid-to-image";
 import { recolorImage } from "./recolor-image";
 import { scaleImage } from "./scale-image";
 
@@ -11,13 +12,14 @@ export type RenderOptions = {
   /* Style images by adding pixel grid lines (lossy operation). */
   grid: {
     enabled: boolean;
+    size: number;
     color: string;
   };
 };
 
 export const renderImage = async (
   blob: Blob,
-  { recolor, scale }: RenderOptions
+  { recolor, scale, grid }: RenderOptions
 ): Promise<Blob> => {
   let image = blob;
 
@@ -25,8 +27,12 @@ export const renderImage = async (
     image = await recolorImage(image);
   }
 
-  if (scale > 1) {
+  if (scale > 1 && !grid.enabled) {
     image = await scaleImage(image, scale);
+  }
+
+  if (grid.enabled) {
+    image = await addGridToImage(image, scale, grid.size, grid.color);
   }
 
   return image;
