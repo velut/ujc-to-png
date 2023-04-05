@@ -1,5 +1,5 @@
 import { canvasToBlob } from "./canvas-to-blob";
-import { loadImage } from "./load-image";
+import { setupCanvas } from "./setup-canvas";
 
 export const addGridToImage = async (
   /** blob must be a 1:1 pixel image (that is, not scaled) */
@@ -8,14 +8,7 @@ export const addGridToImage = async (
   strokeSize: number,
   strokeColor: string
 ): Promise<Blob> => {
-  const canvas = document.createElement("canvas");
-  const context = canvas.getContext("2d")!;
-  const image = await loadImage(blob);
-
-  // Draw image on canvas.
-  canvas.width = image.width;
-  canvas.height = image.height;
-  context.drawImage(image, 0, 0);
+  const { canvas, context, image } = await setupCanvas(blob);
 
   // Get pixel data.
   const imageData = context.getImageData(0, 0, canvas.width, canvas.height);

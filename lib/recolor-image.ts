@@ -1,15 +1,8 @@
 import { canvasToBlob } from "./canvas-to-blob";
-import { loadImage } from "./load-image";
+import { setupCanvas } from "./setup-canvas";
 
 export const recolorImage = async (blob: Blob): Promise<Blob> => {
-  const canvas = document.createElement("canvas");
-  const context = canvas.getContext("2d")!;
-  const image = await loadImage(blob);
-
-  // Draw image on canvas.
-  canvas.width = image.width;
-  canvas.height = image.height;
-  context.drawImage(image, 0, 0);
+  const { canvas, context } = await setupCanvas(blob);
 
   // NOTE: Browsers don't return the exact original pixel colors.
   // See https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-getimagedata.
@@ -22,7 +15,8 @@ export const recolorImage = async (blob: Blob): Promise<Blob> => {
     pixels[i + 3] = 255;
   }
 
-  context.putImageData(imageData, 0, 0); // Replace image data.
+  // Replace original data with recolored data.
+  context.putImageData(imageData, 0, 0);
 
   return canvasToBlob(canvas);
 };

@@ -1,10 +1,8 @@
 import { canvasToBlob } from "./canvas-to-blob";
-import { loadImage } from "./load-image";
+import { setupCanvas } from "./setup-canvas";
 
 export const scaleImage = async (blob: Blob, scale: number): Promise<Blob> => {
-  const canvas = document.createElement("canvas");
-  const context = canvas.getContext("2d")!;
-  const image = await loadImage(blob);
+  const { canvas, context, image } = await setupCanvas(blob);
 
   // Resize canvas to fit scaled image.
   canvas.width = scale * image.width;
