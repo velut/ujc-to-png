@@ -3,6 +3,7 @@
 import { useDebouncedCallback } from "@react-hookz/web";
 import { useAtom } from "jotai";
 import { ChangeEventHandler, useState } from "react";
+import { twMerge } from "tailwind-merge";
 import { renderOptionsAtom } from "./store";
 
 export default function OptionsGridColor() {
@@ -30,14 +31,14 @@ export default function OptionsGridColor() {
   return (
     <div className="flex items-center gap-2">
       <label
-        className="flex w-40 flex-none items-center gap-1"
+        className="block w-1/2 flex-none sm:w-1/4"
         title="Pick a color for the grid lines."
         htmlFor="grid-color-option"
       >
-        Grid lines color <div className="text-sm">(?)</div>
+        Grid lines color
       </label>
       <input
-        className="h-10 w-48 rounded"
+        className={twMerge("h-10 w-full rounded sm:w-1/4", "dark:bg-gray-900")}
         type="color"
         id="grid-color-option"
         name="grid-color-option"

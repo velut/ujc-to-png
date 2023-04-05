@@ -32,11 +32,11 @@ export default function OptionsGridEnable() {
   return (
     <div className="flex items-center gap-2">
       <label
-        className="flex w-40 flex-none items-center gap-1"
+        className="block w-1/2 sm:w-1/4"
         title="Add grid lines between pixels in the image for a stylized effect."
         htmlFor="grid-enabled-option"
       >
-        Grid lines <div className="text-sm">(?)</div>
+        Grid lines
       </label>
       <input
         className={twMerge("h-5 w-5 rounded", "dark:bg-gray-900")}

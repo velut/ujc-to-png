@@ -33,14 +33,14 @@ export default function OptionsGridSize() {
   return (
     <div className="flex items-center gap-2">
       <label
-        className="flex w-40 flex-none items-center gap-1"
+        className="block w-1/2 flex-none sm:w-1/4"
         title="Choose a size in pixels for the grid lines."
         htmlFor="grid-size-option"
       >
-        Grid lines size <div className="text-sm">(?)</div>
+        Grid lines size
       </label>
       <input
-        className={twMerge("rounded", "dark:bg-gray-900")}
+        className={twMerge("h-10 w-full rounded sm:w-1/4", "dark:bg-gray-900")}
         type="text"
         inputMode="numeric"
         pattern="[0-9]*"

@@ -29,11 +29,11 @@ export default function OptionsRecolor() {
   return (
     <div className="flex items-center gap-2">
       <label
-        className="flex w-40 flex-none items-center gap-1"
-        title="Change the original image colors to fix transparent backgrounds in colored nonograms."
+        className="block w-1/2 sm:w-1/4"
+        title="Change the original colors to fix transparent backgrounds in colored nonograms."
         htmlFor="recolor-option"
       >
-        Recolor images <div className="text-sm">(?)</div>
+        Recolor images
       </label>
       <input
         className={twMerge("h-5 w-5 rounded", "dark:bg-gray-900")}
