@@ -1,5 +1,6 @@
 import OptionsGridColor from "./OptionsGridColor";
 import OptionsGridEnable from "./OptionsGridEnable";
+import OptionsGridRadius from "./OptionsGridRadius";
 import OptionsGridSize from "./OptionsGridSize";
 
 export default function OptionsGrid() {
@@ -8,6 +9,7 @@ export default function OptionsGrid() {
       <OptionsGridEnable />
       <OptionsGridSize />
       <OptionsGridColor />
+      <OptionsGridRadius />
     </div>
   );
 }

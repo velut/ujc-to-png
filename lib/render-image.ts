@@ -11,9 +11,17 @@ export type RenderOptions = {
 
   /* Style images by adding pixel grid lines (lossy operation). */
   grid: {
+    /* True if the grid should be enabled. */
     enabled: boolean;
+
+    /* Stroke size in pixels for grid lines. */
     size: number;
+
+    /* Stroke color in hex format for grid lines. */
     color: string;
+
+    /* Radius for rounding borders of original pixels. */
+    radius: number;
   };
 };
 
@@ -32,7 +40,13 @@ export const renderImage = async (
   }
 
   if (grid.enabled) {
-    image = await addGridToImage(image, scale, grid.size, grid.color);
+    image = await addGridToImage(
+      image,
+      scale,
+      grid.size,
+      grid.color,
+      grid.radius
+    );
   }
 
   return image;

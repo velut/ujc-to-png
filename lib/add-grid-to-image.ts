@@ -6,7 +6,8 @@ export const addGridToImage = async (
   blob: Blob,
   scale: number,
   strokeSize: number,
-  strokeColor: string
+  strokeColor: string,
+  borderRadius: number
 ): Promise<Blob> => {
   const { canvas, context, image } = await setupCanvas(blob);
 
@@ -46,12 +47,17 @@ export const addGridToImage = async (
 
       // Paint possibly scaled pixel.
       context.fillStyle = `rgb(${red}, ${green}, ${blue}, ${alpha})`;
-      context.fillRect(
-        x * (strokeSize + scale) + strokeSize,
-        y * (strokeSize + scale) + strokeSize,
-        scale,
-        scale
-      );
+      const cornerX = x * (strokeSize + scale) + strokeSize;
+      const cornerY = y * (strokeSize + scale) + strokeSize;
+      if (borderRadius <= 0) {
+        // Square rectangle.
+        context.fillRect(cornerX, cornerY, scale, scale);
+      } else {
+        // Rounded rectangle.
+        context.beginPath();
+        context.roundRect(cornerX, cornerY, scale, scale, borderRadius);
+        context.fill();
+      }
     }
   }
 
