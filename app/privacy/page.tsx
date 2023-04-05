@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "../Link";
+import Link from "next/link";
 
 const title = "Privacy Policy | ujc to png";
 const description = "Privacy policy for ujc to png.";
