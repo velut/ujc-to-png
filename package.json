@@ -11,7 +11,6 @@
   "dependencies": {
     "@react-hookz/web": "^23.0.0",
     "client-zip": "^2.3.1",
-    "clsx": "^1.2.1",
     "compress-tag": "^2.0.1",
     "file-saver": "^2.0.5",
     "jotai": "^2.0.3",
@@ -21,8 +20,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
-    "tailwind-merge": "^1.11.0",
-    "zustand": "^4.3.6"
+    "tailwind-merge": "^1.11.0"
   },
   "devDependencies": {
     "@swc-jotai/react-refresh": "0.0.7",
