@@ -6,10 +6,9 @@ export const recolorImage = async (blob: Blob): Promise<Blob> => {
   const context = canvas.getContext("2d")!;
   const image = await loadImage(blob);
 
-  // Resize canvas to fit image.
+  // Draw image on canvas.
   canvas.width = image.width;
   canvas.height = image.height;
-
   context.drawImage(image, 0, 0);
 
   // NOTE: Browsers don't return the exact original pixel colors.
