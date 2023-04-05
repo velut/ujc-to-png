@@ -14,33 +14,32 @@ export default function Gallery() {
   return (
     <>
       <h2>Gallery</h2>
-      {loading ? (
-        <p className="motion-safe:animate-pulse">
-          Processing nonograms, please wait...
-        </p>
-      ) : !hasImages ? (
-        <p>
-          No nonograms found, try adding some <code>.ujc</code> files in the
-          dropzone above.
-        </p>
-      ) : (
-        <>
-          <DownloadButton />
-          <div
-            className={twMerge(
-              "not-prose",
-              "flex flex-wrap items-center justify-center gap-6 rounded-xl border-2 border-dashed p-8",
-              "border-gray-600 dark:border-gray-400",
-              "bg-gray-100 dark:bg-gray-900"
-            )}
-          >
+      <DownloadButton />
+      <div
+        className={twMerge(
+          "not-prose",
+          "flex flex-wrap items-center justify-center gap-6 rounded-xl border-2 border-dashed p-8 text-center",
+          "border-gray-600 dark:border-gray-400",
+          "bg-gray-100 dark:bg-gray-900"
+        )}
+      >
+        {loading ? (
+          <p className="motion-safe:animate-pulse">
+            Processing nonograms, please wait...
+          </p>
+        ) : !hasImages ? (
+          <p>
+            No nonograms found, try adding some files in the dropzone above.
+          </p>
+        ) : (
+          <>
             {images.map((image) => (
               <GalleryImage key={image.file.name} url={image.url} />
             ))}
-          </div>
-          <DownloadButton />
-        </>
-      )}
+          </>
+        )}
+      </div>
+      <DownloadButton />
     </>
   );
 }
