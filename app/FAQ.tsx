@@ -118,6 +118,23 @@ export default function FAQ() {
         <li>
           <p>
             <strong>
+              Why does the <code>Border radius</code> option not work?
+            </strong>
+          </p>
+          <p>
+            Currently, this feature is{" "}
+            <Link href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/roundRect#browser_compatibility">
+              supported only by some browsers
+            </Link>
+            . Make sure you are using the latest version of a supported browser
+            and try increasing both the <code>Scale option</code> and the{" "}
+            <code>Border radius</code> option to a high value like{" "}
+            <code>50</code> to verify that it works.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>
               Can I save my nonograms from the Nonograms Katana iOS app?
             </strong>
           </p>
@@ -126,6 +143,22 @@ export default function FAQ() {
             the Nonograms Katana app are different and the iOS version does not
             currently provide an option to export your nonograms to a local
             file.
+          </p>
+          <p>
+            If you find a way to export or share <code>.ujc</code> files from
+            the iOS app, please open an issue (see last question) so that we can
+            update this answer.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Can I directly import png images into this tool?</strong>
+          </p>
+          <p>
+            <strong>Yes</strong>. Just drag and drop them into the dropzone or
+            select them in the file picker. After that you can manipulate them
+            as usual with the available options. For example, you can use this
+            tool to add pixel grid lines to your pixel art image.
           </p>
         </li>
         <li>
