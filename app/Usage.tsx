@@ -39,7 +39,7 @@ export default function Usage() {
         </li>
         <li>
           <p>
-            <strong>Step 3: Drag and Drop Your Files</strong>
+            <strong>Step 3: Drag and Drop Your Files Below</strong>
           </p>
           <p>
             Now, you can drag and drop the <code>.ujc</code> files in the area
