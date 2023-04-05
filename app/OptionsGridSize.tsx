@@ -26,7 +26,7 @@ export default function OptionsGridSize() {
   const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {
     setInputValue(event.target.value);
     const maybeNumber = parseInt(event.target.value, 10);
-    const size = isNaN(maybeNumber) ? 1 : Math.max(1, maybeNumber);
+    const size = isNaN(maybeNumber) ? 0 : Math.max(0, maybeNumber);
     setGridSize(size);
   };
 
