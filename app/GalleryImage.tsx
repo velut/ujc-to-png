@@ -5,9 +5,15 @@
 import Link from "next/link";
 import { twMerge } from "tailwind-merge";
 
-export default function GalleryImage({ url }: { url: string }) {
+export default function GalleryImage({
+  filename,
+  url,
+}: {
+  filename: string;
+  url: string;
+}) {
   return (
-    <Link href={url} target="_blank">
+    <Link href={url} target="_blank" title={filename}>
       <img
         className={twMerge(
           "pixel-art h-32 w-32 rounded border object-contain shadow",
@@ -17,7 +23,7 @@ export default function GalleryImage({ url }: { url: string }) {
           "hover:border-gray-400 dark:hover:border-gray-600"
         )}
         src={url}
-        alt=""
+        alt={filename}
       />
     </Link>
   );
