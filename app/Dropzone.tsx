@@ -25,6 +25,7 @@ export default function Dropzone() {
       <div
         {...getRootProps()}
         className={twMerge(
+          "not-prose",
           "flex h-48 items-center justify-center rounded-xl border-2 border-dashed p-8 text-center",
           "border-gray-600 dark:border-gray-400",
           "bg-gray-100 dark:bg-gray-900"
@@ -37,8 +38,10 @@ export default function Dropzone() {
           </p>
         ) : (
           <p>
-            Drag and drop your nonograms here, or click to select{" "}
-            <code>.ujc</code> files.
+            Drag and drop your nonograms here,
+            <br />
+            or click to select <code className="font-mono">.ujc</code> or{" "}
+            <code className="font-mono">.png</code> files.
           </p>
         )}
       </div>
