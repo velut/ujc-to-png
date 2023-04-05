@@ -3,18 +3,19 @@
 import { useDebouncedCallback } from "@react-hookz/web";
 import { useAtom } from "jotai";
 import { ChangeEventHandler, useState } from "react";
+import { twMerge } from "tailwind-merge";
 import { renderOptionsAtom } from "./store";
 
-export default function OptionsGridColor() {
+export default function OptionsGridSize() {
   const [renderOptions, setRenderOptions] = useAtom(renderOptionsAtom);
-  const [inputValue, setInputValue] = useState(renderOptions.grid.color);
+  const [inputValue, setInputValue] = useState(`${renderOptions.grid.size}`);
 
-  const setGridColor = useDebouncedCallback(
-    (color: string) => {
-      if (color !== renderOptions.grid.color) {
+  const setGridSize = useDebouncedCallback(
+    (size: number) => {
+      if (size !== renderOptions.grid.size) {
         setRenderOptions({
           ...renderOptions,
-          grid: { ...renderOptions.grid, color },
+          grid: { ...renderOptions.grid, size },
         });
       }
     },
@@ -24,23 +25,27 @@ export default function OptionsGridColor() {
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {
     setInputValue(event.target.value);
-    setGridColor(event.target.value);
+    const maybeNumber = parseInt(event.target.value, 10);
+    const size = isNaN(maybeNumber) ? 1 : Math.max(1, maybeNumber);
+    setGridSize(size);
   };
 
   return (
     <div className="flex items-center gap-2">
       <label
         className="flex w-40 flex-none items-center gap-1"
-        title="Pick a color for the grid lines."
-        htmlFor="grid-color-option"
+        title="Choose a size in pixels for the grid lines."
+        htmlFor="grid-size-option"
       >
-        Grid lines color <div className="text-sm">(?)</div>
+        Grid lines size <div className="text-sm">(?)</div>
       </label>
       <input
-        className="h-10 w-48 rounded"
-        type="color"
-        id="grid-color-option"
-        name="grid-color-option"
+        className={twMerge("rounded", "dark:bg-gray-900")}
+        type="text"
+        inputMode="numeric"
+        pattern="[0-9]*"
+        id="grid-size-option"
+        name="grid-size-option"
         value={inputValue}
         onChange={handleChange}
         disabled={!renderOptions.grid.enabled}
