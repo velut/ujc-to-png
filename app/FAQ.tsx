@@ -135,6 +135,30 @@ export default function FAQ() {
         <li>
           <p>
             <strong>
+              Why are the <code>Dropzone</code>, <code>Options</code>, and{" "}
+              <code>Gallery</code> sections not visible?
+            </strong>
+          </p>
+          <p>
+            This can happen when something goes wrong when loading the tool.
+            Make sure you are using an updated and supported browser that has
+            Javascript enabled and try reloading the page.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Can I directly import png images into this tool?</strong>
+          </p>
+          <p>
+            <strong>Yes</strong>. Just drag and drop them into the dropzone or
+            select them in the file picker. After that you can manipulate them
+            as usual with the available options. For example, you can use this
+            tool to add pixel grid lines to your pixel art image.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>
               Can I save my nonograms from the Nonograms Katana iOS app?
             </strong>
           </p>
@@ -148,17 +172,6 @@ export default function FAQ() {
             If you find a way to export or share <code>.ujc</code> files from
             the iOS app, please open an issue (see last question) so that we can
             update this answer.
-          </p>
-        </li>
-        <li>
-          <p>
-            <strong>Can I directly import png images into this tool?</strong>
-          </p>
-          <p>
-            <strong>Yes</strong>. Just drag and drop them into the dropzone or
-            select them in the file picker. After that you can manipulate them
-            as usual with the available options. For example, you can use this
-            tool to add pixel grid lines to your pixel art image.
           </p>
         </li>
         <li>
