@@ -1,5 +1,12 @@
-import DownloadButton from "./DownloadButton";
-import GalleryClient from "./GalleryClient";
+import dynamic from "next/dynamic";
+
+const DownloadButton = dynamic(() => import("./DownloadButton"), {
+  ssr: false,
+});
+
+const GalleryClient = dynamic(() => import("./GalleryClient"), {
+  ssr: false,
+});
 
 export default function Gallery() {
   return (

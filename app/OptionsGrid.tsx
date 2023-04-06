@@ -1,3 +1,5 @@
+"use client";
+
 import OptionsGridColor from "./OptionsGridColor";
 import OptionsGridEnable from "./OptionsGridEnable";
 import OptionsGridRadius from "./OptionsGridRadius";
