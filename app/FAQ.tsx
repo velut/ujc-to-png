@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function FAQ() {
   return (
-    <>
+    <div>
       <h2>FAQ</h2>
 
       <ul>
@@ -174,6 +174,6 @@ export default function FAQ() {
           </p>
         </li>
       </ul>
-    </>
+    </div>
   );
 }

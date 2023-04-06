@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <>
+    <div>
       <h1 className="text-center">
         <Link className="no-underline hover:underline" href="/">
           ujc to png
@@ -15,6 +15,6 @@ export default function Header() {
         </Link>{" "}
         as simple images.
       </p>
-    </>
+    </div>
   );
 }

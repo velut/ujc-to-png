@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <>
+    <div>
       <p>
         Website created by{" "}
         <Link href="https://github.com/velut">Edoardo Scibona</Link>.
@@ -19,6 +19,6 @@ export default function Footer() {
           <Link href="https://github.com/velut/ujc-to-png">GitHub Project</Link>
         </li>
       </ul>
-    </>
+    </div>
   );
 }

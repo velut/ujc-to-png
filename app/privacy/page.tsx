@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <>
+    <div>
       <h2>Privacy Policy</h2>
       <p>Last updated on March 28, 2023.</p>
 
@@ -48,6 +48,6 @@ export default function PrivacyPage() {
         <Link href="https://github.com/velut">Github</Link> or by{" "}
         <Link href="mailto:info@jsdocs.io">email</Link>.
       </p>
-    </>
+    </div>
   );
 }

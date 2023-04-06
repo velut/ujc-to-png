@@ -21,12 +21,12 @@ export const metadata: Metadata = {
 
 export default function IndexPage() {
   return (
-    <>
+    <div>
       <Usage />
       <Dropzone />
       <Options />
       <Gallery />
       <FAQ />
-    </>
+    </div>
   );
 }

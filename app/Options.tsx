@@ -4,7 +4,7 @@ import OptionsScale from "./OptionsScale";
 
 export default function Options() {
   return (
-    <>
+    <div>
       <h2>Options</h2>
       <hr />
       <OptionsRecolor />
@@ -13,6 +13,6 @@ export default function Options() {
       <hr />
       <OptionsGrid />
       <hr />
-    </>
+    </div>
   );
 }

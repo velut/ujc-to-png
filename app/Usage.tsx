@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Usage() {
   return (
-    <>
+    <div>
       <h2>Usage</h2>
       <p>
         With this tool, nonogram authors can easily convert their own designs
@@ -50,6 +50,6 @@ export default function Usage() {
           </p>
         </li>
       </ul>
-    </>
+    </div>
   );
 }
