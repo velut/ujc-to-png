@@ -127,7 +127,7 @@ export default function FAQ() {
               supported only by some browsers
             </Link>
             . Make sure you are using the latest version of a supported browser
-            and try increasing both the <code>Scale option</code> and the{" "}
+            and try increasing both the <code>Scale images</code> option and the{" "}
             <code>Border radius</code> option to a high value like{" "}
             <code>50</code> to verify that it works.
           </p>
