@@ -16,7 +16,7 @@ export default function GalleryImage({
     <Link href={url} target="_blank" title={filename}>
       <img
         className={twMerge(
-          "pixel-art h-32 w-32 rounded border object-contain shadow",
+          "pixelated h-32 w-32 rounded border object-contain shadow",
           "bg-white", // Background color for transparent backgrounds.
           "hover:shadow-lg",
           "border-gray-200 dark:border-gray-800",
