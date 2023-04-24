@@ -13,7 +13,7 @@
     "client-zip": "^2.3.1",
     "compress-tag": "^2.0.1",
     "file-saver": "^2.0.5",
-    "jotai": "^2.0.3",
+    "jotai": "^2.0.4",
     "next": "^13.2.4",
     "p-limit": "^4.0.0",
     "plur": "^5.1.0",
