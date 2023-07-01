@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-hookz/web": "^23.0.0",
+    "@react-hookz/web": "^23.1.0",
     "client-zip": "^2.4.3",
     "compress-tag": "^2.0.1",
     "file-saver": "^2.0.5",
