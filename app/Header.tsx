@@ -5,7 +5,7 @@ export default function Header() {
     <div>
       <h1 className="text-center">
         <Link className="no-underline hover:underline" href="/">
-          ujc to png
+          🧩 ujc to png
         </Link>
       </h1>
       <p className="text-center">
