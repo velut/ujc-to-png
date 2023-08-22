@@ -10,7 +10,7 @@ const title = "Download your Nonograms Katana puzzles as images | ujc to png";
 const description = compress`
 Export, resize, and download your pictures from the game Nonograms Katana.
 `;
-const url = "https://ujc-to-png.vercel.app/";
+const url = "https://ujc-to-png.vercel.app";
 
 export const metadata: Metadata = {
   title,

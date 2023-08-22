@@ -5,6 +5,7 @@ import Providers from "./Providers";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ujc-to-png.vercel.app"),
   openGraph: {
     siteName: "ujc to png",
     type: "website",
