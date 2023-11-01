@@ -12,8 +12,8 @@ dependencies:
     specifier: ^2.4.4
     version: 2.4.4
   compress-tag:
-    specifier: ^2.0.1
-    version: 2.0.1
+    specifier: ^3.0.0
+    version: 3.0.0
   file-saver:
     specifier: ^2.0.5
     version: 2.0.5
@@ -740,10 +740,10 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
-  /compress-tag@2.0.1:
-    resolution: {integrity: sha512-hBPVIKc6TowW5JKvyI3Po/BDOlPgKgY2mE3Wg5AWmPJk1NOdSegFAYG3/cag5y13X1AKggD1P3dzpWIFdJDfMQ==}
+  /compress-tag@3.0.0:
+    resolution: {integrity: sha512-PFpUesBU2bsPH2Q48xAGFcv8erSHx09sEJMjZL5c33zJiOqO/OU/zPhx8TBTA7/D2xjbwEQO26iIUoK+Fq65HQ==}
     dependencies:
-      unraw: 2.0.1
+      unraw: 3.0.0
     dev: false
 
   /concat-map@0.0.1:
@@ -2748,8 +2748,8 @@ packages:
       which-boxed-primitive: 1.0.2
     dev: true
 
-  /unraw@2.0.1:
-    resolution: {integrity: sha512-tdOvLfRzHolwYcHS6HIX860MkK9LQ4+oLuNwFYL7bpgTEO64PZrcQxkisgwJYCfF8sKiWLwwu1c83DvMkbefIQ==}
+  /unraw@3.0.0:
+    resolution: {integrity: sha512-08/DA66UF65OlpUDIQtbJyrqTR0jTAlJ+jsnkQ4jxR7+K5g5YG1APZKQSMCE1vqqmD+2pv6+IdEjmopFatacvg==}
     dev: false
 
   /update-browserslist-db@1.0.13(browserslist@4.22.1):
