@@ -53,8 +53,8 @@ devDependencies:
     specifier: 0.5.9
     version: 0.5.9(tailwindcss@3.3.3)
   '@types/file-saver':
-    specifier: 2.0.5
-    version: 2.0.5
+    specifier: 2.0.6
+    version: 2.0.6
   '@types/node':
     specifier: 20.8.0
     version: 20.8.0
@@ -358,8 +358,8 @@ packages:
       tailwindcss: 3.3.3
     dev: true
 
-  /@types/file-saver@2.0.5:
-    resolution: {integrity: sha512-zv9kNf3keYegP5oThGLaPk8E081DFDuwfqjtiTzm6PoxChdJ1raSuADf2YGCVIyrSynLrgc8JWv296s7Q7pQSQ==}
+  /@types/file-saver@2.0.6:
+    resolution: {integrity: sha512-Mw671DVqoMHbjw0w4v2iiOro01dlT/WhWp5uwecBa0Wg8c+bcZOjgF1ndBnlaxhtvFCgTRBtsGivSVhrK/vnag==}
     dev: true
 
   /@types/json5@0.0.29:
