@@ -19,7 +19,7 @@ dependencies:
     version: 2.0.5
   jotai:
     specifier: ^2.6.0
-    version: 2.6.0(@types/react@18.2.39)(react@18.2.0)
+    version: 2.6.0(@types/react@18.2.49)(react@18.2.0)
   next:
     specifier: ^13.5.6
     version: 13.5.6(react-dom@18.2.0)(react@18.2.0)
@@ -59,8 +59,8 @@ devDependencies:
     specifier: 20.11.14
     version: 20.11.14
   '@types/react':
-    specifier: 18.2.39
-    version: 18.2.39
+    specifier: 18.2.49
+    version: 18.2.49
   autoprefixer:
     specifier: 10.4.16
     version: 10.4.16(postcss@8.4.32)
@@ -374,8 +374,8 @@ packages:
   /@types/prop-types@15.7.10:
     resolution: {integrity: sha512-mxSnDQxPqsZxmeShFH+uwQ4kO4gcJcGahjjMFeLbKE95IAZiiZyiEepGZjtXJ7hN/yfu0bu9xN2ajcU0JcxX6A==}
 
-  /@types/react@18.2.39:
-    resolution: {integrity: sha512-Oiw+ppED6IremMInLV4HXGbfbG6GyziY3kqAwJYOR0PNbkYDmLWQA3a95EhdSmamsvbkJN96ZNN+YD+fGjzSBA==}
+  /@types/react@18.2.49:
+    resolution: {integrity: sha512-nEJonYlS7+LUVdqRBHldXLRa7ZDeOm/rJbJwGbjmn2hqhmdO4C6vSgvhhNv2qBDhGSv2oLuUA+f5JtyUJDY6bA==}
     dependencies:
       '@types/prop-types': 15.7.10
       '@types/scheduler': 0.16.6
@@ -1739,7 +1739,7 @@ packages:
     hasBin: true
     dev: true
 
-  /jotai@2.6.0(@types/react@18.2.39)(react@18.2.0):
+  /jotai@2.6.0(@types/react@18.2.49)(react@18.2.0):
     resolution: {integrity: sha512-Vt6hsc04Km4j03l+Ax+Sc+FVft5cRJhqgxt6GTz6GM2eM3DyX3CdBdzcG0z2FrlZToL1/0OAkqDghIyARWnSuQ==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
@@ -1751,7 +1751,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@types/react': 18.2.39
+      '@types/react': 18.2.49
       react: 18.2.0
     dev: false
 
