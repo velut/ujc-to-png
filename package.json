@@ -10,17 +10,17 @@
   },
   "dependencies": {
     "@react-hookz/web": "^24.0.4",
-    "client-zip": "^2.4.4",
+    "client-zip": "^2.4.5",
     "compress-tag": "^3.0.0",
     "file-saver": "^2.0.5",
-    "jotai": "^2.6.0",
+    "jotai": "^2.8.0",
     "next": "^14.2.3",
     "p-limit": "^4.0.0",
     "plur": "^5.1.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-dropzone": "^14.2.3",
-    "tailwind-merge": "^2.2.2"
+    "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
     "@swc-jotai/react-refresh": "0.1.0",
