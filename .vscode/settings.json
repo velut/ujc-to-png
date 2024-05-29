@@ -1,35 +1,20 @@
 {
   "cSpell.ignoreWords": [
-    "Dropzone",
-    "Edoardo",
-    "Katana",
-    "Nonogram",
-    "Scibona",
-    "Vercel",
     "clsx",
     "doesn",
     "dropzone",
+    "dropzone",
+    "edoardo",
     "hookz",
+    "katana",
+    "nonogram",
     "nonograms",
+    "scibona",
     "srgba",
     "tailwindcss",
+    "vercel",
     "zustand"
   ],
   "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true,
-  "workbench.colorCustomizations": {
-    "activityBar.activeBackground": "#685e45",
-    "activityBar.background": "#685e45",
-    "activityBar.foreground": "#e7e7e7",
-    "activityBar.inactiveForeground": "#e7e7e799",
-    "activityBarBadge.background": "#79a699",
-    "activityBarBadge.foreground": "#15202b",
-    "sash.hoverBorder": "#685e45",
-    "statusBar.background": "#494231",
-    "statusBar.foreground": "#e7e7e7",
-    "statusBarItem.hoverBackground": "#685e45",
-    "statusBarItem.remoteBackground": "#494231",
-    "statusBarItem.remoteForeground": "#e7e7e7"
-  },
-  "peacock.color": "#494231"
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }
