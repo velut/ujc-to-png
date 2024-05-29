@@ -13,20 +13,20 @@ Export, resize, and download your pictures from the game Nonograms Katana.
 const url = "https://ujc-to-png.vercel.app";
 
 export const metadata: Metadata = {
-  title,
-  description,
-  openGraph: { title, description, url },
-  twitter: { title, description },
+	title,
+	description,
+	openGraph: { title, description, url },
+	twitter: { title, description },
 };
 
 export default function IndexPage() {
-  return (
-    <div>
-      <Usage />
-      <Dropzone />
-      <Options />
-      <Gallery />
-      <FAQ />
-    </div>
-  );
+	return (
+		<div>
+			<Usage />
+			<Dropzone />
+			<Options />
+			<Gallery />
+			<FAQ />
+		</div>
+	);
 }

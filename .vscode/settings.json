@@ -1,20 +1,20 @@
 {
-  "cSpell.ignoreWords": [
-    "clsx",
-    "doesn",
-    "dropzone",
-    "dropzone",
-    "edoardo",
-    "hookz",
-    "katana",
-    "nonogram",
-    "nonograms",
-    "scibona",
-    "srgba",
-    "tailwindcss",
-    "vercel",
-    "zustand"
-  ],
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+	"cSpell.ignoreWords": [
+		"clsx",
+		"doesn",
+		"dropzone",
+		"dropzone",
+		"edoardo",
+		"hookz",
+		"katana",
+		"nonogram",
+		"nonograms",
+		"scibona",
+		"srgba",
+		"tailwindcss",
+		"vercel",
+		"zustand"
+	],
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"typescript.enablePromptUseWorkspaceTsdk": true
 }

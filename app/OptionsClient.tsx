@@ -5,15 +5,15 @@ import OptionsRecolor from "./OptionsRecolor";
 import OptionsScale from "./OptionsScale";
 
 export default function OptionsClient() {
-  return (
-    <div>
-      <hr />
-      <OptionsRecolor />
-      <hr />
-      <OptionsScale />
-      <hr />
-      <OptionsGrid />
-      <hr />
-    </div>
-  );
+	return (
+		<div>
+			<hr />
+			<OptionsRecolor />
+			<hr />
+			<OptionsScale />
+			<hr />
+			<OptionsGrid />
+			<hr />
+		</div>
+	);
 }

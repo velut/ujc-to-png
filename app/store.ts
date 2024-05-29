@@ -8,9 +8,9 @@ import { revokeObjectUrls } from "../lib/revoke-object-urls";
 const _loadingAtom = atom(false);
 const _nonogramsAtom = atom<Nonogram[]>([]);
 const _renderOptionsAtom = atom<RenderOptions>({
-  recolor: false,
-  scale: 1,
-  grid: { enabled: false, size: 1, color: "#000000", radius: 0 },
+	recolor: false,
+	scale: 1,
+	grid: { enabled: false, size: 1, color: "#000000", radius: 0 },
 });
 const _imagesAtom = atom<ImageFile[]>([]);
 
@@ -19,30 +19,30 @@ export const nonogramsAtom = atom((get) => get(_nonogramsAtom));
 export const imagesAtom = atom((get) => get(_imagesAtom));
 
 export const processFilesAtom = atom(null, async (get, set, files: File[]) => {
-  set(_loadingAtom, true);
-  set(_nonogramsAtom, []);
-  const oldImages = get(_imagesAtom);
-  set(_imagesAtom, []);
-  revokeObjectUrls(oldImages);
-  const nonograms = await parseNonograms(files);
-  const renderOptions = get(_renderOptionsAtom);
-  const images = await createImageFiles(nonograms, renderOptions);
-  set(_nonogramsAtom, nonograms);
-  set(_imagesAtom, images);
-  set(_loadingAtom, false);
+	set(_loadingAtom, true);
+	set(_nonogramsAtom, []);
+	const oldImages = get(_imagesAtom);
+	set(_imagesAtom, []);
+	revokeObjectUrls(oldImages);
+	const nonograms = await parseNonograms(files);
+	const renderOptions = get(_renderOptionsAtom);
+	const images = await createImageFiles(nonograms, renderOptions);
+	set(_nonogramsAtom, nonograms);
+	set(_imagesAtom, images);
+	set(_loadingAtom, false);
 });
 
 export const renderOptionsAtom = atom(
-  (get) => get(_renderOptionsAtom),
-  async (get, set, renderOptions: RenderOptions) => {
-    set(_loadingAtom, true);
-    const oldImages = get(_imagesAtom);
-    set(_imagesAtom, []);
-    revokeObjectUrls(oldImages);
-    set(_renderOptionsAtom, renderOptions);
-    const nonograms = get(_nonogramsAtom);
-    const images = await createImageFiles(nonograms, renderOptions);
-    set(_imagesAtom, images);
-    set(_loadingAtom, false);
-  }
+	(get) => get(_renderOptionsAtom),
+	async (get, set, renderOptions: RenderOptions) => {
+		set(_loadingAtom, true);
+		const oldImages = get(_imagesAtom);
+		set(_imagesAtom, []);
+		revokeObjectUrls(oldImages);
+		set(_renderOptionsAtom, renderOptions);
+		const nonograms = get(_nonogramsAtom);
+		const images = await createImageFiles(nonograms, renderOptions);
+		set(_imagesAtom, images);
+		set(_loadingAtom, false);
+	},
 );

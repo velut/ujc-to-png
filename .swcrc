@@ -1,7 +1,7 @@
 {
-  "jsc": {
-    "experimental": {
-      "plugins": [["@swc-jotai/react-refresh", {}]]
-    }
-  }
+	"jsc": {
+		"experimental": {
+			"plugins": [["@swc-jotai/react-refresh", {}]]
+		}
+	}
 }
