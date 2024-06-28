@@ -1,7 +1,7 @@
 # ujc file format
 
 | Section              | Size in bytes | Notes                                                                                       |
-|----------------------|---------------|---------------------------------------------------------------------------------------------|
+| -------------------- | ------------- | ------------------------------------------------------------------------------------------- |
 | File header          | 4             | Always `1A 81 CD 45` for a valid `ujc` file                                                 |
 | File format version  | 4             | Currently `00 00 00 01` (version 1 of the `ujc` file format)                                |
 | Zero value           | 4             | Fixed value `00 00 00 00`                                                                   |
@@ -28,7 +28,7 @@
     31      24   20   16   12    8    4    0
 
 | Section                          | Size in bits | Bit positions | Notes                                                            |
-|----------------------------------|--------------|---------------|------------------------------------------------------------------|
+| -------------------------------- | ------------ | ------------- | ---------------------------------------------------------------- |
 | Empty (E)                        | 8            | [31, 24]      | Currently always empty                                           |
 | "Two-line English name" flag (T) | 1            | 23            | `1` if the "Two-line English name" option is true                |
 | Number of colors (C)             | 4            | [11, 8]       | Total number of colors including background color, even if white |
