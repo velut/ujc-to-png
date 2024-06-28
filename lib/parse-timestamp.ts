@@ -2,6 +2,7 @@
 // in other words, `yymmdd_hhmmss_RANDOM.ujc`.
 // This regex extracts the timestamp from the filename.
 const timestampRegex =
+	// @ts-ignore
 	/^(?<year>\d{2})(?<month>\d{2})(?<day>\d{2})_(?<hour>\d{2})(?<minute>\d{2})(?<second>\d{2})/;
 
 export const parseTimestamp = (filename: string): string => {
