@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import Footer from "./Footer";
 import Header from "./Header";
 import Providers from "./Providers";
