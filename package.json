@@ -14,7 +14,7 @@
 		"client-zip": "^2.4.5",
 		"compress-tag": "^3.0.0",
 		"file-saver": "^2.0.5",
-		"jotai": "^2.9.2",
+		"jotai": "^2.9.3",
 		"next": "^14.2.5",
 		"p-limit": "^6.1.0",
 		"plur": "^5.1.0",
