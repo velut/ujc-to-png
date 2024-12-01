@@ -11,7 +11,7 @@
 	},
 	"dependencies": {
 		"@react-hookz/web": "^24.0.4",
-		"client-zip": "^2.4.5",
+		"client-zip": "^2.4.6",
 		"compress-tag": "^3.0.0",
 		"file-saver": "^2.0.5",
 		"jotai": "^2.10.0",
