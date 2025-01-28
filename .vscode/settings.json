@@ -1,21 +1,22 @@
 {
-	"cSpell.ignoreWords": [
-		"clsx",
-		"doesn",
-		"dropzone",
-		"edoardo",
-		"gridify",
-		"hookz",
-		"katana",
-		"nonogram",
-		"nonograms",
-		"scibona",
-		"srgba",
-		"tailwindcss",
-		"ubuu",
-		"vercel",
-		"zustand"
-	],
-	"typescript.tsdk": "node_modules/typescript/lib",
-	"typescript.enablePromptUseWorkspaceTsdk": true
+  "cSpell.ignoreWords": [
+    "clsx",
+    "doesn",
+    "dropzone",
+    "edoardo",
+    "gridify",
+    "hookz",
+    "katana",
+    "nonogram",
+    "nonograms",
+    "scibona",
+    "srgba",
+    "tailwindcss",
+    "ubuu",
+    "velut",
+    "vercel",
+    "zustand"
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }
