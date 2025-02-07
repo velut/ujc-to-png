@@ -1,17 +1,48 @@
 ---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  page?: string;
+}
+
+const { title, description, page } = Astro.props;
+const baseUrl = "https://ujc-to-png.vercel.app";
+const ogUrl = page ? `${baseUrl}/${page}` : baseUrl;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.ico" sizes="16x16" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    {/* OpenGraph */}
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={ogUrl} />
+    <meta property="og:site_name" content="ujc to png" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+  </head>
+
+  <body class="dark:bg-gray-800">
+    <div class="container mx-auto flex justify-center p-8 md:p-12">
+      <article class="prose dark:prose-invert lg:prose-lg">
+        <Header />
+        <hr />
+        <slot />
+        <hr />
+        <Footer />
+      </article>
+    </div>
+  </body>
 </html>
