@@ -11,14 +11,23 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.2.0",
+    "@react-hookz/web": "^25.0.1",
     "astro": "^5.2.3",
+    "client-zip": "^2.4.6",
+    "file-saver": "^2.0.5",
+    "jotai": "^2.11.3",
+    "p-limit": "^6.2.0",
+    "plur": "^5.1.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-dropzone": "^14.3.5",
+    "tailwind-merge": "^3.0.1"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.0.3",
+    "@types/file-saver": "^2.0.7",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "tailwindcss": "^4.0.3"
