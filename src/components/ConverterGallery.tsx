@@ -22,6 +22,11 @@ function DownloadButton() {
   const enabled = !loading && hasImages;
 
   const downloadImages = async () => {
+    if (count === 1) {
+      const image = images[0];
+      saveAs(image.file, image.file.name);
+      return;
+    }
     const archive = await downloadZip(images.map((image) => image.file)).blob();
     saveAs(archive, "nonograms.zip");
   };
