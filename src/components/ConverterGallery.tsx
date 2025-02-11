@@ -74,7 +74,7 @@ function GalleryImage({ filename, url }: { filename: string; url: string }) {
   return (
     <a href={url} target="_blank" title={filename}>
       <img
-        // "[image-rendering:pixelated]" to Preserve pixelated look.
+        // "[image-rendering:pixelated]" to preserve pixelated look.
         // "bg-white" to add background color for transparent backgrounds.
         className="h-32 w-32 rounded border border-gray-200 bg-white object-contain shadow [image-rendering:pixelated] hover:border-gray-400 hover:shadow-lg dark:border-gray-800 dark:hover:border-gray-600"
         src={url}
