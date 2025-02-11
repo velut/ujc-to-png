@@ -88,7 +88,7 @@ function OptionsScale() {
       <div className="w-1/2 space-y-1 sm:w-96">
         <label htmlFor="scale-option">Scale images</label>
         <div className="text-sm">
-          Scale the original image dimensions by this value.
+          Scale up the original image dimensions by this value.
         </div>
       </div>
       <input
