@@ -43,21 +43,22 @@ function OptionsRecolor() {
 
   return (
     <div className="flex items-center gap-2">
-      <label
-        className="block w-1/2 sm:w-1/4"
-        title="Change the original colors to fix transparent backgrounds in colored nonograms."
-        htmlFor="recolor-option"
-      >
-        Recolor images
-      </label>
-      <input
-        className={twMerge("h-5 w-5 rounded", "dark:bg-gray-900")}
-        type="checkbox"
-        name="recolor-option"
-        id="recolor-option"
-        checked={inputValue}
-        onChange={handleChange}
-      />
+      <div className="space-y-1 w-1/2 sm:w-96">
+        <label htmlFor="recolor-option">Recolor images</label>
+        <div className="text-sm">
+          Fix transparent backgrounds in colored nonograms.
+        </div>
+      </div>
+      <div>
+        <input
+          className="h-5 w-5 rounded dark:bg-gray-900"
+          type="checkbox"
+          name="recolor-option"
+          id="recolor-option"
+          checked={inputValue}
+          onChange={handleChange}
+        />
+      </div>
     </div>
   );
 }
@@ -85,15 +86,14 @@ function OptionsScale() {
 
   return (
     <div className="flex items-center gap-2">
-      <label
-        className="block w-1/2 flex-none sm:w-1/4"
-        title="Scale the original image dimensions by this multiplier value."
-        htmlFor="scale-option"
-      >
-        Scale images
-      </label>
+      <div className="space-y-1 w-1/2 sm:w-96">
+        <label htmlFor="scale-option">Scale images</label>
+        <div className="text-sm">
+          Scale the original image dimensions by this value.
+        </div>
+      </div>
       <input
-        className={twMerge("h-10 w-full rounded sm:w-1/4", "dark:bg-gray-900")}
+        className="h-10 rounded w-1/2 sm:w-1/4 dark:bg-gray-900"
         type="text"
         inputMode="numeric"
         pattern="[0-9]*"
