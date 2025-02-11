@@ -1,7 +1,6 @@
 import { downloadZip } from "client-zip";
 import { saveAs } from "file-saver";
 import { useAtomValue } from "jotai";
-import plur from "plur";
 import { twMerge } from "tailwind-merge";
 import { imagesAtom, loadingAtom } from "../store/store";
 
@@ -43,7 +42,9 @@ function DownloadButton() {
       onClick={downloadImages}
       disabled={!enabled}
     >
-      {enabled ? `Download ${count} ${plur("image", count)}` : "Download"}
+      {enabled
+        ? `Download ${count} ${count > 1 ? "images" : "image"}`
+        : "Download"}
     </button>
   );
 }

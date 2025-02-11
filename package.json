@@ -21,7 +21,6 @@
     "file-saver": "^2.0.5",
     "jotai": "^2.11.3",
     "p-limit": "^6.2.0",
-    "plur": "^5.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-dropzone": "^14.3.5",
