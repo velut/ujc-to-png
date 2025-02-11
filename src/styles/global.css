@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+
+/*
+Generate classes for client only components in the build step.
+See https://github.com/tailwindlabs/tailwindcss/issues/15794#issuecomment-2629603348
+*/
+@source "../components/";
