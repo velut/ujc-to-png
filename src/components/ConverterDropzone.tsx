@@ -1,7 +1,6 @@
 import { useAtomValue, useSetAtom } from "jotai";
 import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
-import { twMerge } from "tailwind-merge";
 import { loadingAtom, processFilesAtom } from "../store/store";
 
 export default function ConverterDropzone() {
@@ -22,12 +21,7 @@ export default function ConverterDropzone() {
       <h2>Dropzone</h2>
       <div
         {...getRootProps()}
-        className={twMerge(
-          "not-prose",
-          "flex h-48 items-center justify-center rounded-xl border-2 border-dashed p-8 text-center",
-          "border-gray-600 dark:border-gray-400",
-          "bg-gray-100 dark:bg-gray-900",
-        )}
+        className="not-prose flex h-48 items-center justify-center rounded-xl border-2 border-dashed border-gray-600 bg-gray-100 p-8 text-center dark:border-gray-400 dark:bg-gray-900"
       >
         <label htmlFor="dropzone" className="sr-only">
           Drag and drop your files here or click to open the file dialog.

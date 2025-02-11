@@ -1,7 +1,6 @@
 import { useDebouncedCallback } from "@react-hookz/web";
 import { useAtom } from "jotai";
 import { type ChangeEventHandler, useState } from "react";
-import { twMerge } from "tailwind-merge";
 import { renderOptionsAtom } from "../store/store";
 
 export default function ConverterOptions() {
@@ -201,13 +200,7 @@ function OptionsGridSize() {
         <div className="text-sm">Stroke size in pixels for the grid lines.</div>
       </div>
       <input
-        className={twMerge(
-          "h-10 w-1/2 rounded sm:w-1/4",
-          "dark:bg-gray-900",
-          "disabled:bg-gray-300 disabled:text-gray-400",
-          "dark:disabled:bg-gray-700 dark:disabled:text-gray-600",
-          "disabled:cursor-not-allowed",
-        )}
+        className="h-10 w-1/2 rounded disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-400 sm:w-1/4 dark:bg-gray-900 dark:disabled:bg-gray-700 dark:disabled:text-gray-600"
         type="text"
         inputMode="numeric"
         pattern="[0-9]*"
@@ -250,13 +243,7 @@ function OptionsGridColor() {
         <div className="text-sm">Pick a color for the grid lines.</div>
       </div>
       <input
-        className={twMerge(
-          "h-10 w-1/2 rounded sm:w-1/4",
-          "dark:bg-gray-900",
-          "disabled:bg-gray-300 disabled:text-gray-400",
-          "dark:disabled:bg-gray-700 dark:disabled:text-gray-600",
-          "disabled:cursor-not-allowed",
-        )}
+        className="h-10 w-1/2 rounded disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-400 sm:w-1/4 dark:bg-gray-900 dark:disabled:bg-gray-700 dark:disabled:text-gray-600"
         type="color"
         id="grid-color-option"
         name="grid-color-option"
@@ -301,13 +288,7 @@ function OptionsGridRadius() {
         </div>
       </div>
       <input
-        className={twMerge(
-          "h-10 w-1/2 rounded sm:w-1/4",
-          "dark:bg-gray-900",
-          "disabled:bg-gray-300 disabled:text-gray-400",
-          "dark:disabled:bg-gray-700 dark:disabled:text-gray-600",
-          "disabled:cursor-not-allowed",
-        )}
+        className="h-10 w-1/2 rounded disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-400 sm:w-1/4 dark:bg-gray-900 dark:disabled:bg-gray-700 dark:disabled:text-gray-600"
         type="text"
         inputMode="numeric"
         pattern="[0-9]*"

@@ -1,7 +1,6 @@
 import { downloadZip } from "client-zip";
 import { saveAs } from "file-saver";
 import { useAtomValue } from "jotai";
-import { twMerge } from "tailwind-merge";
 import { imagesAtom, loadingAtom } from "../store/store";
 
 export default function ConverterGallery() {
@@ -29,15 +28,7 @@ function DownloadButton() {
 
   return (
     <button
-      className={twMerge(
-        "not-prose",
-        "my-8 flex h-16 w-full items-center justify-center rounded-xl text-lg font-bold",
-        "enabled:bg-blue-600 enabled:text-white enabled:shadow",
-        "hover:enabled:bg-blue-500",
-        "disabled:bg-gray-300 disabled:text-gray-400",
-        "dark:disabled:bg-gray-700 dark:disabled:text-gray-600",
-        "disabled:cursor-not-allowed",
-      )}
+      className="not-prose my-8 flex h-16 w-full items-center justify-center rounded-xl text-lg font-bold enabled:bg-blue-600 enabled:text-white enabled:shadow hover:enabled:bg-blue-500 disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-400 dark:disabled:bg-gray-700 dark:disabled:text-gray-600"
       type="button"
       onClick={downloadImages}
       disabled={!enabled}
@@ -55,14 +46,7 @@ function GalleryImages() {
   const hasImages = images.length > 0;
 
   return (
-    <div
-      className={twMerge(
-        "not-prose",
-        "flex items-center justify-center rounded-xl border-2 border-dashed p-8 text-center",
-        "border-gray-600 dark:border-gray-400",
-        "bg-gray-100 dark:bg-gray-900",
-      )}
-    >
+    <div className="not-prose flex items-center justify-center rounded-xl border-2 border-dashed border-gray-600 bg-gray-100 p-8 text-center dark:border-gray-400 dark:bg-gray-900">
       {loading ? (
         <p className="text-balance motion-safe:animate-pulse">
           Processing nonograms, please wait...
@@ -90,14 +74,9 @@ function GalleryImage({ filename, url }: { filename: string; url: string }) {
   return (
     <a href={url} target="_blank" title={filename}>
       <img
-        className={twMerge(
-          "[image-rendering:pixelated]", // Preserve pixelated look.
-          "h-32 w-32 rounded border object-contain shadow",
-          "bg-white", // Background color for transparent backgrounds.
-          "hover:shadow-lg",
-          "border-gray-200 dark:border-gray-800",
-          "hover:border-gray-400 dark:hover:border-gray-600",
-        )}
+        // "[image-rendering:pixelated]" to Preserve pixelated look.
+        // "bg-white" to add background color for transparent backgrounds.
+        className="h-32 w-32 rounded border border-gray-200 bg-white object-contain shadow [image-rendering:pixelated] hover:border-gray-400 hover:shadow-lg dark:border-gray-800 dark:hover:border-gray-600"
         src={url}
         alt={filename}
       />
