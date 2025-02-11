@@ -32,7 +32,7 @@ function OptionsRecolor() {
       }
     },
     [renderOptions, setRenderOptions],
-    500
+    500,
   );
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -43,7 +43,7 @@ function OptionsRecolor() {
 
   return (
     <div className="flex items-center gap-2">
-      <div className="space-y-1 w-1/2 sm:w-96">
+      <div className="w-1/2 space-y-1 sm:w-96">
         <label htmlFor="recolor-option">Recolor images</label>
         <div className="text-sm">
           Fix transparent backgrounds in colored nonograms.
@@ -74,7 +74,7 @@ function OptionsScale() {
       }
     },
     [renderOptions, setRenderOptions],
-    500
+    500,
   );
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -86,14 +86,14 @@ function OptionsScale() {
 
   return (
     <div className="flex items-center gap-2">
-      <div className="space-y-1 w-1/2 sm:w-96">
+      <div className="w-1/2 space-y-1 sm:w-96">
         <label htmlFor="scale-option">Scale images</label>
         <div className="text-sm">
           Scale the original image dimensions by this value.
         </div>
       </div>
       <input
-        className="h-10 rounded w-1/2 sm:w-1/4 dark:bg-gray-900"
+        className="h-10 w-1/2 rounded sm:w-1/4 dark:bg-gray-900"
         type="text"
         inputMode="numeric"
         pattern="[0-9]*"
@@ -109,7 +109,7 @@ function OptionsScale() {
 function OptionsGrid() {
   return (
     <div className="space-y-8">
-      <div className="text-center text-sm border p-4 rounded-xl border-gray-600 dark:border-gray-400 text-balance">
+      <div className="rounded-xl border border-gray-600 p-4 text-center text-sm text-balance dark:border-gray-400">
         Check out{" "}
         <a href="https://www.gridify.it" className="font-bold">
           gridify.it
@@ -141,7 +141,7 @@ function OptionsGridEnable() {
       }
     },
     [renderOptions, setRenderOptions],
-    500
+    500,
   );
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -152,7 +152,7 @@ function OptionsGridEnable() {
 
   return (
     <div className="flex items-center gap-2">
-      <div className="space-y-1 w-1/2 sm:w-96">
+      <div className="w-1/2 space-y-1 sm:w-96">
         <label htmlFor="grid-enabled-option">Grid lines</label>
         <div className="text-sm">
           Add grid lines between pixels for a stylized effect.
@@ -184,7 +184,7 @@ function OptionsGridSize() {
       }
     },
     [renderOptions, setRenderOptions],
-    500
+    500,
   );
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -196,7 +196,7 @@ function OptionsGridSize() {
 
   return (
     <div className="flex items-center gap-2">
-      <div className="space-y-1 w-1/2 sm:w-96">
+      <div className="w-1/2 space-y-1 sm:w-96">
         <label htmlFor="grid-size-option">Grid lines size</label>
         <div className="text-sm">Stroke size in pixels for the grid lines.</div>
       </div>
@@ -206,7 +206,7 @@ function OptionsGridSize() {
           "dark:bg-gray-900",
           "disabled:bg-gray-300 disabled:text-gray-400",
           "dark:disabled:bg-gray-700 dark:disabled:text-gray-600",
-          "disabled:cursor-not-allowed"
+          "disabled:cursor-not-allowed",
         )}
         type="text"
         inputMode="numeric"
@@ -235,7 +235,7 @@ function OptionsGridColor() {
       }
     },
     [renderOptions, setRenderOptions],
-    500
+    500,
   );
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -245,7 +245,7 @@ function OptionsGridColor() {
 
   return (
     <div className="flex items-center gap-2">
-      <div className="space-y-1 w-1/2 sm:w-96">
+      <div className="w-1/2 space-y-1 sm:w-96">
         <label htmlFor="grid-color-option">Grid lines color</label>
         <div className="text-sm">Pick a color for the grid lines.</div>
       </div>
@@ -255,7 +255,7 @@ function OptionsGridColor() {
           "dark:bg-gray-900",
           "disabled:bg-gray-300 disabled:text-gray-400",
           "dark:disabled:bg-gray-700 dark:disabled:text-gray-600",
-          "disabled:cursor-not-allowed"
+          "disabled:cursor-not-allowed",
         )}
         type="color"
         id="grid-color-option"
@@ -282,7 +282,7 @@ function OptionsGridRadius() {
       }
     },
     [renderOptions, setRenderOptions],
-    500
+    500,
   );
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -294,7 +294,7 @@ function OptionsGridRadius() {
 
   return (
     <div className="flex items-center gap-2">
-      <div className="space-y-1 w-1/2 sm:w-96">
+      <div className="w-1/2 space-y-1 sm:w-96">
         <label htmlFor="grid-radius-option">Border radius</label>
         <div className="text-sm">
           Round the corners of pixels inside the grid.
@@ -306,7 +306,7 @@ function OptionsGridRadius() {
           "dark:bg-gray-900",
           "disabled:bg-gray-300 disabled:text-gray-400",
           "dark:disabled:bg-gray-700 dark:disabled:text-gray-600",
-          "disabled:cursor-not-allowed"
+          "disabled:cursor-not-allowed",
         )}
         type="text"
         inputMode="numeric"

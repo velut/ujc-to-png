@@ -7,7 +7,7 @@ export const addGridToImage = async (
   scale: number,
   strokeSize: number,
   strokeColor: string,
-  borderRadius: number
+  borderRadius: number,
 ): Promise<Blob> => {
   const { canvas, context, image } = await setupCanvas(blob);
 

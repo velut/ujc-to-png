@@ -37,7 +37,7 @@ function DownloadButton() {
         "hover:enabled:bg-blue-500",
         "disabled:bg-gray-300 disabled:text-gray-400",
         "dark:disabled:bg-gray-700 dark:disabled:text-gray-600",
-        "disabled:cursor-not-allowed"
+        "disabled:cursor-not-allowed",
       )}
       type="button"
       onClick={downloadImages}
@@ -59,11 +59,11 @@ function GalleryImages() {
         "not-prose",
         "flex items-center justify-center rounded-xl border-2 border-dashed p-8 text-center",
         "border-gray-600 dark:border-gray-400",
-        "bg-gray-100 dark:bg-gray-900"
+        "bg-gray-100 dark:bg-gray-900",
       )}
     >
       {loading ? (
-        <p className="motion-safe:animate-pulse text-balance">
+        <p className="text-balance motion-safe:animate-pulse">
           Processing nonograms, please wait...
         </p>
       ) : !hasImages ? (
@@ -95,7 +95,7 @@ function GalleryImage({ filename, url }: { filename: string; url: string }) {
           "bg-white", // Background color for transparent backgrounds.
           "hover:shadow-lg",
           "border-gray-200 dark:border-gray-800",
-          "hover:border-gray-400 dark:hover:border-gray-600"
+          "hover:border-gray-400 dark:hover:border-gray-600",
         )}
         src={url}
         alt={filename}

@@ -26,7 +26,7 @@ export default function ConverterDropzone() {
           "not-prose",
           "flex h-48 items-center justify-center rounded-xl border-2 border-dashed p-8 text-center",
           "border-gray-600 dark:border-gray-400",
-          "bg-gray-100 dark:bg-gray-900"
+          "bg-gray-100 dark:bg-gray-900",
         )}
       >
         <label htmlFor="dropzone" className="sr-only">
@@ -34,7 +34,7 @@ export default function ConverterDropzone() {
         </label>
         <input id="dropzone" {...getInputProps()} />
         {isLoading ? (
-          <p className="motion-safe:animate-pulse text-balance">
+          <p className="text-balance motion-safe:animate-pulse">
             Processing nonograms, please wait...
           </p>
         ) : (

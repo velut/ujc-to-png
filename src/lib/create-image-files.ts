@@ -9,7 +9,7 @@ export type ImageFile = {
 
 const createImageFile = async (
   nonogram: Nonogram,
-  renderOptions: RenderOptions
+  renderOptions: RenderOptions,
 ): Promise<ImageFile> => {
   const image = await renderImage(nonogram.pngData, renderOptions);
   const file = new File([image], `${nonogram.filename}.png`, {
@@ -22,13 +22,13 @@ const createImageFile = async (
 
 export const createImageFiles = async (
   nonograms: Nonogram[],
-  renderOptions: RenderOptions
+  renderOptions: RenderOptions,
 ): Promise<ImageFile[]> => {
   return (
     await Promise.allSettled(
       nonograms.map((nonogram) =>
-        limit(() => createImageFile(nonogram, renderOptions))
-      )
+        limit(() => createImageFile(nonogram, renderOptions)),
+      ),
     )
   )
     .flatMap((result) => (result.status === "fulfilled" ? result.value : []))

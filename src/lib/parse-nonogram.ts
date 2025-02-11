@@ -17,7 +17,7 @@ export const parseNonogram = async (file: File): Promise<Nonogram> => {
 export const parseNonograms = async (files: File[]): Promise<Nonogram[]> => {
   return (
     await Promise.allSettled(
-      files.map((file) => limit(() => parseNonogram(file)))
+      files.map((file) => limit(() => parseNonogram(file))),
     )
   )
     .flatMap((result) => (result.status === "fulfilled" ? result.value : []))

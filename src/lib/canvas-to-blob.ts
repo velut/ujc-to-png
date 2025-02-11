@@ -1,5 +1,5 @@
 export const canvasToBlob = async (
-  canvas: HTMLCanvasElement
+  canvas: HTMLCanvasElement,
 ): Promise<Blob> => {
   return new Promise((resolve, reject) => {
     canvas.toBlob(
@@ -11,7 +11,7 @@ export const canvasToBlob = async (
         }
       },
       "image/png",
-      1.0
+      1.0,
     );
   });
 };

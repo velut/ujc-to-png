@@ -44,5 +44,5 @@ export const renderOptionsAtom = atom(
     const images = await createImageFiles(nonograms, renderOptions);
     set(_imagesAtom, images);
     set(_loadingAtom, false);
-  }
+  },
 );

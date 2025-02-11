@@ -27,7 +27,7 @@ export type RenderOptions = {
 
 export const renderImage = async (
   blob: Blob,
-  { recolor, scale, grid }: RenderOptions
+  { recolor, scale, grid }: RenderOptions,
 ): Promise<Blob> => {
   let image = blob;
 
@@ -45,7 +45,7 @@ export const renderImage = async (
       scale,
       grid.size,
       grid.color,
-      grid.radius
+      grid.radius,
     );
   }
 

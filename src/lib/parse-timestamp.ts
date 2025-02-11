@@ -13,7 +13,7 @@ export const parseTimestamp = (filename: string): string => {
   }
   const { year, month, day, hour, minute, second } = match.groups;
   const date = new Date(
-    `20${year}-${month}-${day}T${hour}:${minute}:${second}Z`
+    `20${year}-${month}-${day}T${hour}:${minute}:${second}Z`,
   );
   return date.toISOString();
 };
