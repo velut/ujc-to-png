@@ -29,7 +29,10 @@ export default function ConverterDropzone() {
           "bg-gray-100 dark:bg-gray-900"
         )}
       >
-        <input {...getInputProps()} />
+        <label htmlFor="dropzone" className="sr-only">
+          Drag and drop your files here or click to open the file dialog.
+        </label>
+        <input id="dropzone" {...getInputProps()} />
         {isLoading ? (
           <p className="motion-safe:animate-pulse text-balance">
             Processing nonograms, please wait...
