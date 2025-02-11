@@ -1,7 +1,5 @@
 {
   "cSpell.ignoreWords": [
-    "clsx",
-    "doesn",
     "dropzone",
     "edoardo",
     "gridify",
@@ -16,8 +14,7 @@
     "ubuu",
     "ucdevs",
     "velut",
-    "vercel",
-    "zustand"
+    "vercel"
   ],
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true
