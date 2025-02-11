@@ -152,15 +152,14 @@ function OptionsGridEnable() {
 
   return (
     <div className="flex items-center gap-2">
-      <label
-        className="block w-1/2 sm:w-1/4"
-        title="Add grid lines between pixels for a stylized effect."
-        htmlFor="grid-enabled-option"
-      >
-        Grid lines
-      </label>
+      <div className="space-y-1 w-1/2 sm:w-96">
+        <label htmlFor="grid-enabled-option">Grid lines</label>
+        <div className="text-sm">
+          Add grid lines between pixels for a stylized effect.
+        </div>
+      </div>
       <input
-        className={twMerge("h-5 w-5 rounded", "dark:bg-gray-900")}
+        className="h-5 w-5 rounded dark:bg-gray-900"
         type="checkbox"
         name="grid-enabled-option"
         id="grid-enabled-option"
@@ -197,16 +196,13 @@ function OptionsGridSize() {
 
   return (
     <div className="flex items-center gap-2">
-      <label
-        className="block w-1/2 flex-none sm:w-1/4"
-        title="Choose a size in pixels for the grid lines."
-        htmlFor="grid-size-option"
-      >
-        Grid lines size
-      </label>
+      <div className="space-y-1 w-1/2 sm:w-96">
+        <label htmlFor="grid-size-option">Grid lines size</label>
+        <div className="text-sm">Stroke size in pixels for the grid lines.</div>
+      </div>
       <input
         className={twMerge(
-          "h-10 w-full rounded sm:w-1/4",
+          "h-10 w-1/2 rounded sm:w-1/4",
           "dark:bg-gray-900",
           "disabled:bg-gray-300 disabled:text-gray-400",
           "dark:disabled:bg-gray-700 dark:disabled:text-gray-600",
@@ -249,16 +245,13 @@ function OptionsGridColor() {
 
   return (
     <div className="flex items-center gap-2">
-      <label
-        className="block w-1/2 flex-none sm:w-1/4"
-        title="Pick a color for the grid lines."
-        htmlFor="grid-color-option"
-      >
-        Grid lines color
-      </label>
+      <div className="space-y-1 w-1/2 sm:w-96">
+        <label htmlFor="grid-color-option">Grid lines color</label>
+        <div className="text-sm">Pick a color for the grid lines.</div>
+      </div>
       <input
         className={twMerge(
-          "h-10 w-full rounded sm:w-1/4",
+          "h-10 w-1/2 rounded sm:w-1/4",
           "dark:bg-gray-900",
           "disabled:bg-gray-300 disabled:text-gray-400",
           "dark:disabled:bg-gray-700 dark:disabled:text-gray-600",
@@ -301,16 +294,15 @@ function OptionsGridRadius() {
 
   return (
     <div className="flex items-center gap-2">
-      <label
-        className="block w-1/2 flex-none sm:w-1/4"
-        title="Choose a radius to round the corners of pixels inside the grid."
-        htmlFor="grid-radius-option"
-      >
-        Border radius
-      </label>
+      <div className="space-y-1 w-1/2 sm:w-96">
+        <label htmlFor="grid-radius-option">Border radius</label>
+        <div className="text-sm">
+          Round the corners of pixels inside the grid.
+        </div>
+      </div>
       <input
         className={twMerge(
-          "h-10 w-full rounded sm:w-1/4",
+          "h-10 w-1/2 rounded sm:w-1/4",
           "dark:bg-gray-900",
           "disabled:bg-gray-300 disabled:text-gray-400",
           "dark:disabled:bg-gray-700 dark:disabled:text-gray-600",
