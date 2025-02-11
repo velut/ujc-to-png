@@ -10,7 +10,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": "prettier --check .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "pre-push": "prettier --check . && astro check && astro build"
   },
   "dependencies": {
     "@astrojs/react": "^4.2.0",
