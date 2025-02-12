@@ -1,4 +1,4 @@
-import { downloadZip } from "client-zip";
+import { BlobReader, BlobWriter, ZipWriter } from "@zip.js/zip.js";
 import { saveAs } from "file-saver";
 import { useAtomValue } from "jotai";
 import { imagesAtom, loadingAtom } from "../store/store";
@@ -27,8 +27,14 @@ function DownloadButton() {
       saveAs(image.file, image.file.name);
       return;
     }
-    const archive = await downloadZip(images.map((image) => image.file)).blob();
-    saveAs(archive, "nonograms.zip");
+    const zip = new ZipWriter(new BlobWriter("application/zip"));
+    await Promise.all(
+      images.map((image) =>
+        zip.add(image.file.name, new BlobReader(image.file)),
+      ),
+    );
+    const blob = await zip.close();
+    saveAs(blob, "nonograms.zip");
   };
 
   return (

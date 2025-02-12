@@ -14,12 +14,12 @@ importers:
       '@react-hookz/web':
         specifier: ^25.0.1
         version: 25.0.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@zip.js/zip.js':
+        specifier: ^2.7.57
+        version: 2.7.57
       astro:
         specifier: ^5.2.6
         version: 5.2.6(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.1)(typescript@5.7.3)(yaml@2.7.0)
-      client-zip:
-        specifier: ^2.4.6
-        version: 2.4.6
       file-saver:
         specifier: ^2.0.5
         version: 2.0.5
@@ -830,6 +830,10 @@ packages:
   '@vscode/l10n@0.0.18':
     resolution: {integrity: sha512-KYSIHVmslkaCDyw013pphY+d7x1qV8IZupYfeIfzNA+nsaWHbn5uPuQRvdRFsa9zFzGeudPuoGoZ1Op4jrJXIQ==}
 
+  '@zip.js/zip.js@2.7.57':
+    resolution: {integrity: sha512-BtonQ1/jDnGiMed6OkV6rZYW78gLmLswkHOzyMrMb+CAR7CZO8phOHO6c2qw6qb1g1betN7kwEHhhZk30dv+NA==}
+    engines: {bun: '>=0.7.0', deno: '>=1.0.0', node: '>=16.5.0'}
+
   acorn@8.14.0:
     resolution: {integrity: sha512-cl669nCJTZBsL97OF4kUQm5g5hC2uihk0NxY3WENAC0TYdILVkAyHymAntgxGkl7K+t0cXIrH5siy5S4XkFycA==}
     engines: {node: '>=0.4.0'}
@@ -948,9 +952,6 @@ packages:
   cli-boxes@3.0.0:
     resolution: {integrity: sha512-/lzGpEWL/8PfI0BmBOPRwp0c/wFNX1RdUML3jK/RcSBA9T8mZDdQpqYBKtCFTOfQbwPqWEOpjqW+Fnayc0969g==}
     engines: {node: '>=10'}
-
-  client-zip@2.4.6:
-    resolution: {integrity: sha512-e7t1u14h/yT0A12qBwFsaus8UZZ8+MCaNAEn/z53mrukLq/LFcKX7TkbntAppGu8he2p8pz9vc5NEGE/h4ohlw==}
 
   cliui@8.0.1:
     resolution: {integrity: sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ==}
@@ -3097,6 +3098,8 @@ snapshots:
 
   '@vscode/l10n@0.0.18': {}
 
+  '@zip.js/zip.js@2.7.57': {}
+
   acorn@8.14.0: {}
 
   ajv@8.17.1:
@@ -3297,8 +3300,6 @@ snapshots:
   ci-info@4.1.0: {}
 
   cli-boxes@3.0.0: {}
-
-  client-zip@2.4.6: {}
 
   cliui@8.0.1:
     dependencies:
