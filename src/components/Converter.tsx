@@ -6,8 +6,8 @@ export default function Converter() {
   return (
     <>
       <ConverterDropzone />
-      <ConverterOptions />
       <ConverterGallery />
+      <ConverterOptions />
     </>
   );
 }
