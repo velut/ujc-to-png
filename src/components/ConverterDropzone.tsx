@@ -20,8 +20,10 @@ export default function ConverterDropzone() {
     <div>
       <h2>Dropzone</h2>
       <div
-        {...getRootProps()}
-        className="not-prose flex h-48 items-center justify-center rounded-xl border-2 border-dashed border-gray-600 bg-gray-100 p-8 text-center dark:border-gray-400 dark:bg-gray-900"
+        {...getRootProps({
+          className:
+            "not-prose flex h-48 items-center justify-center rounded-xl border-2 border-dashed border-gray-600 bg-gray-100 p-8 text-center dark:border-gray-400 dark:bg-gray-900",
+        })}
       >
         <label htmlFor="dropzone" className="sr-only">
           Drag and drop your files here or click to open the file dialog.
