@@ -4,9 +4,7 @@
   @click="downloadImages()"
   :disabled="isBusy || images.length === 0"
 >
-  <span
-    class="text-balance"
-    x-show="isBusy || images.length === 0"
+  <span class="text-balance" x-show="isBusy || images.length === 0"
     >Download images</span
   >
   <span

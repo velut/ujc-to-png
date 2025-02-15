@@ -9,24 +9,18 @@
     @dragover.prevent
     @drop.prevent="handleUpload($event)"
   >
-    <span
-      class="text-balance"
-      x-show="!isBusy"
-      >Drag and drop your nonograms here, or click to select <code class="font-mono">.ujc</code> or <code
-        class="font-mono">.png</code
-      > files.</span
+    <span class="text-balance" x-show="!isBusy"
+      >Drag and drop your nonograms here, or click to select <code
+        class="font-mono">.ujc</code
+      > or <code class="font-mono">.png</code> files.</span
     >
-    <span
-      class="text-balance motion-safe:animate-pulse"
-      x-show="isBusy"
+    <span class="text-balance motion-safe:animate-pulse" x-show="isBusy"
       >Processing nonograms, please wait...</span
     >
   </button>
 
   {/* Hidden file input. */}
-  <label
-    for="dropzone-input"
-    class="sr-only"
+  <label for="dropzone-input" class="sr-only"
     >Click to open the file dialog.</label
   >
   <input

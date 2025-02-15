@@ -55,7 +55,9 @@ export const converter = defineComponent(() => ({
       ...this.renderOptions,
       grid: { ...this.renderOptions.grid },
     };
-    opts.scale = Number.isInteger(Number(opts.scale)) ? Math.max(1, Number(opts.scale)) : 1;
+    opts.scale = Number.isInteger(Number(opts.scale))
+      ? Math.max(1, Number(opts.scale))
+      : 1;
     opts.grid.radius = Number.isInteger(Number(opts.grid.radius))
       ? Math.max(0, Number(opts.grid.radius))
       : 0;
@@ -69,7 +71,9 @@ export const converter = defineComponent(() => ({
     }
     const zip = new ZipWriter(new BlobWriter("application/zip"));
     await Promise.all(
-      this.images.map((image) => zip.add(image.file.name, new BlobReader(image.file))),
+      this.images.map((image) =>
+        zip.add(image.file.name, new BlobReader(image.file)),
+      ),
     );
     const blob = await zip.close();
     saveAs(blob, "nonograms.zip");
