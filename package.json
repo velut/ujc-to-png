@@ -14,27 +14,22 @@
     "pre-push": "prettier --check . && astro check && astro build"
   },
   "dependencies": {
-    "@astrojs/react": "^4.2.0",
-    "@react-hookz/web": "^25.0.1",
+    "@astrojs/alpinejs": "^0.4.3",
     "@zip.js/zip.js": "^2.7.57",
+    "alpinejs": "^3.14.8",
     "astro": "^5.2.6",
     "attr-accept": "^2.2.5",
     "file-saver": "^2.0.5",
     "file-selector": "^2.1.2",
-    "jotai": "^2.12.0",
-    "p-limit": "^6.2.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-dropzone": "^14.3.5"
+    "p-limit": "^6.2.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.0.6",
+    "@types/alpinejs": "^3.13.11",
     "@types/file-saver": "^2.0.7",
-    "@types/react": "^19.0.8",
-    "@types/react-dom": "^19.0.3",
     "prettier": "^3.5.0",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.11",

@@ -1,0 +1,50 @@
+---
+import DownloadButton from "./DownloadButton.astro";
+---
+
+<div>
+  <h2>Gallery</h2>
+
+  <DownloadButton />
+
+  {/* Gallery. */}
+  <div
+    class="not-prose flex items-center justify-center rounded-xl border-2 border-dashed border-gray-600 bg-gray-100 p-8 text-center dark:border-gray-400 dark:bg-gray-900"
+  >
+    <span
+      class="text-balance motion-safe:animate-pulse"
+      x-show="isBusy"
+      >Processing nonograms, please wait...</span
+    >
+    <span
+      class="text-balance"
+      x-show="!isBusy && images.length === 0"
+      >No nonograms found, try adding some files in the dropzone above.</span
+    >
+
+    {/* Gallery images. */}
+    <div
+      class="flex flex-wrap items-center justify-center gap-6"
+      x-show="!isBusy && images.length > 0"
+    >
+      <template
+        x-for="image in images"
+        :key="image.url"
+      >
+        <a
+          :href="image.url"
+          :title="image.file.name"
+          target="_blank"
+        >
+          <img
+            class="h-32 w-32 rounded border border-gray-200 bg-white object-contain shadow [image-rendering:pixelated] hover:border-gray-400 hover:shadow-lg dark:border-gray-800 dark:hover:border-gray-600"
+            :src="image.url"
+            :alt="image.file.name"
+          />
+        </a>
+      </template>
+    </div>
+  </div>
+
+  <DownloadButton />
+</div>

@@ -1,5 +1,5 @@
 ---
-import Converter from "../components/Converter";
+import Converter from "../components/Converter.astro";
 import Faq from "../components/Faq.astro";
 import Usage from "../components/Usage.astro";
 import Layout from "../layouts/Layout.astro";
@@ -11,18 +11,7 @@ import Layout from "../layouts/Layout.astro";
 >
   <div>
     <Usage />
-    <Converter client:only="react">
-      <div slot="fallback">
-        <h2>Dropzone</h2>
-        <div
-          class="not-prose flex h-48 items-center justify-center rounded-xl border-2 border-dashed border-gray-600 bg-gray-100 p-8 text-center dark:border-gray-400 dark:bg-gray-900"
-        >
-          <p class="text-balance motion-safe:animate-pulse">
-            Loading app, please wait...
-          </p>
-        </div>
-      </div>
-    </Converter>
+    <Converter />
     <Faq />
   </div>
 </Layout>

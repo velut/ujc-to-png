@@ -1,0 +1,140 @@
+<div>
+  <h2>Options</h2>
+  <hr />
+
+  {/* Recolor option. */}
+  <div class="flex items-center gap-2">
+    <label
+      for="option-recolor"
+      class="flex w-1/2 flex-col gap-1 sm:w-96"
+    >
+      <span>Recolor images</span>
+      <span class="text-sm">Fix transparent backgrounds in colored nonograms.</span>
+    </label>
+    <input
+      id="option-recolor"
+      name="option-recolor"
+      type="checkbox"
+      class="h-5 w-5 rounded dark:bg-gray-900"
+      x-model="renderOptions.recolor"
+    />
+  </div>
+  <hr />
+
+  {/* Scale option. */}
+  <div class="flex items-center gap-2">
+    <label
+      for="option-scale"
+      class="flex w-1/2 flex-col gap-1 sm:w-96"
+    >
+      <span>Scale up images</span>
+      <span class="text-sm">Multiply the nonogram dimensions by this value.</span>
+    </label>
+    <input
+      id="option-scale"
+      name="option-scale"
+      type="text"
+      inputmode="numeric"
+      pattern="[0-9]*"
+      class="h-10 w-1/2 rounded sm:w-1/4 dark:bg-gray-900"
+      x-model="renderOptions.scale"
+    />
+  </div>
+  <hr />
+
+  {/* Grid options. */}
+  <div class="flex flex-col gap-8">
+    {/* Link to gridify.it. */}
+    <div
+      class="rounded-xl border border-gray-600 p-4 text-center text-sm text-balance dark:border-gray-400"
+    >
+      Check out <a
+        href="https://www.gridify.it"
+        class="font-bold"
+        >gridify.it</a
+      > if you need an image to grid generator with more options.
+    </div>
+
+    <div class="flex flex-col gap-4">
+      {/* Grid enable option. */}
+      <div class="flex items-center gap-2">
+        <label
+          for="option-grid-enable"
+          class="flex w-1/2 flex-col gap-1 sm:w-96"
+        >
+          <span>Grid lines</span>
+          <span class="text-sm">Add grid lines between pixels for a stylized effect.</span>
+        </label>
+        <input
+          id="option-grid-enable"
+          name="option-grid-enable"
+          type="checkbox"
+          class="h-5 w-5 rounded dark:bg-gray-900"
+          x-model="renderOptions.grid.enabled"
+        />
+      </div>
+
+      {/* Grid size option. */}
+      <div class="flex items-center gap-2">
+        <label
+          for="option-grid-stroke-size"
+          class="flex w-1/2 flex-col gap-1 sm:w-96"
+        >
+          <span>Grid lines size</span>
+          <span class="text-sm">Stroke size in pixels for the grid lines.</span>
+        </label>
+        <input
+          id="option-grid-stroke-size"
+          name="option-grid-stroke-size"
+          type="text"
+          inputmode="numeric"
+          pattern="[0-9]*"
+          class="h-10 w-1/2 rounded disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-400 sm:w-1/4 dark:bg-gray-900 dark:disabled:bg-gray-700 dark:disabled:text-gray-600"
+          x-model="renderOptions.grid.size"
+          :disabled="!renderOptions.grid.enabled"
+        />
+      </div>
+
+      {/* Grid color option. */}
+      <div class="flex items-center gap-2">
+        <label
+          for="option-grid-color"
+          class="flex w-1/2 flex-col gap-1 sm:w-96"
+        >
+          <span>Grid lines color</span>
+          <span class="text-sm"> Pick a color for the grid lines.</span>
+        </label>
+        <input
+          id="option-grid-color"
+          name="option-grid-color"
+          type="color"
+          class="h-10 w-1/2 rounded disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-400 sm:w-1/4 dark:bg-gray-900 dark:disabled:bg-gray-700 dark:disabled:text-gray-600"
+          x-model="renderOptions.grid.color"
+          :disabled="!renderOptions.grid.enabled"
+        />
+      </div>
+
+      {/* Grid radius option. */}
+      <div class="flex items-center gap-2">
+        <label
+          for="option-grid-border-radius"
+          class="flex w-1/2 flex-col gap-1 sm:w-96"
+        >
+          <span>Pixel border radius</span>
+          <span class="text-sm">Round the corners of pixels inside the grid.</span>
+        </label>
+        <input
+          id="option-grid-border-radius"
+          name="option-grid-border-radius"
+          type="text"
+          inputmode="numeric"
+          pattern="[0-9]*"
+          class="h-10 w-1/2 rounded disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-400 sm:w-1/4 dark:bg-gray-900 dark:disabled:bg-gray-700 dark:disabled:text-gray-600"
+          x-model="renderOptions.grid.radius"
+          :disabled="!renderOptions.grid.enabled"
+        />
+      </div>
+    </div>
+  </div>
+  <hr />
+</div>

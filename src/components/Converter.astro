@@ -1,0 +1,15 @@
+---
+import ConverterDropzone from "./ConverterDropzone.astro";
+import ConverterGallery from "./ConverterGallery.astro";
+import ConverterOptions from "./ConverterOptions.astro";
+---
+
+{/* See `/src/scripts/converter.ts` for the Alpine component. */}
+<div
+  x-cloak
+  x-data="converter"
+>
+  <ConverterDropzone />
+  <ConverterGallery />
+  <ConverterOptions />
+</div>

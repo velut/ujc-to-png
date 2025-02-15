@@ -1,0 +1,17 @@
+<button
+  type="button"
+  class="not-prose my-8 flex h-16 w-full items-center justify-center rounded-xl text-lg font-bold enabled:bg-blue-600 enabled:text-white enabled:shadow hover:enabled:bg-blue-500 disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-400 dark:disabled:bg-gray-700 dark:disabled:text-gray-600"
+  @click="downloadImages()"
+  :disabled="isBusy || images.length === 0"
+>
+  <span
+    class="text-balance"
+    x-show="isBusy || images.length === 0"
+    >Download images</span
+  >
+  <span
+    class="text-balance"
+    x-show="!isBusy && images.length > 0"
+    x-text="`Download ${images.length} ${images.length > 1 ? 'images' : 'image'}`"
+  ></span>
+</button>
