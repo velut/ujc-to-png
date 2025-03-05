@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Ignore third-party licenses generated at build time
+public/third-party-licenses.txt
