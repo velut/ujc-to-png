@@ -56,8 +56,7 @@ export async function licenses() {
         failOnViolation: true,
       },
       output: {
-        // file: "public/third-party-licenses.txt",
-        file: `public/third-party-licenses.txt`,
+        file: "dist/third-party-licenses.txt",
         template: (dependencies) => {
           const foundLicenses = dependencies.map(
             (dep): License => ({
