@@ -1,4 +1,3 @@
-import { BlobReader, BlobWriter, ZipWriter } from "@zip.js/zip.js";
 import Alpine from "alpinejs";
 import accept from "attr-accept";
 import { saveAs } from "file-saver";
@@ -6,6 +5,7 @@ import { fromEvent } from "file-selector";
 import { createImageFiles, type ImageFile } from "../lib/create-image-files";
 import { parseNonograms, type Nonogram } from "../lib/parse-nonograms";
 import { revokeObjectUrls } from "../lib/revoke-object-urls";
+import { zipImages } from "../lib/zip-images";
 import { defineComponent } from "./define-components";
 
 export const converter = defineComponent(() => ({
@@ -72,13 +72,6 @@ export const converter = defineComponent(() => ({
       saveAs(image.file, image.file.name);
       return;
     }
-    const zip = new ZipWriter(new BlobWriter("application/zip"));
-    await Promise.all(
-      this.images.map((image) =>
-        zip.add(image.file.name, new BlobReader(image.file)),
-      ),
-    );
-    const blob = await zip.close();
-    saveAs(blob, "nonograms.zip");
+    saveAs(await zipImages(this.images), "nonograms.zip");
   },
 }));
