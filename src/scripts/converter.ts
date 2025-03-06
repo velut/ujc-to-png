@@ -3,12 +3,9 @@ import Alpine from "alpinejs";
 import accept from "attr-accept";
 import { saveAs } from "file-saver";
 import { fromEvent } from "file-selector";
-import pMap, { pMapSkip } from "p-map";
 import { createImageFiles, type ImageFile } from "../lib/create-image-files";
-import type { Nonogram } from "../lib/nonogram";
-import { parseNonograms } from "../lib/parse-nonogram";
+import { parseNonograms, type Nonogram } from "../lib/parse-nonograms";
 import { revokeObjectUrls } from "../lib/revoke-object-urls";
-import { unzipNonograms } from "../lib/unzip-nonograms";
 import { defineComponent } from "./define-components";
 
 export const converter = defineComponent(() => ({
@@ -40,37 +37,19 @@ export const converter = defineComponent(() => ({
     const files = (await fromEvent(event))
       .filter((res) => res instanceof File)
       .filter((file) =>
-        accept(
-          file,
-          "application/octet-stream,.ujc,image/png,.png,application/zip,.zip",
-        ),
+        accept(file, [
+          "application/octet-stream",
+          ".ujc",
+          "image/png",
+          ".png",
+          "application/zip",
+          ".zip",
+        ]),
       );
-    await this.processFiles(files);
+    this.nonograms = await parseNonograms(files);
+    await this.renderImages();
     (document.getElementById("dropzone-input") as HTMLInputElement).value = "";
     this.isBusy = false;
-  },
-  async processFiles(files: File[]) {
-    const supportedFiles = await pMap(
-      files,
-      async (file) => {
-        try {
-          const filename = file.name.toLowerCase();
-          if (filename.endsWith(".ujc") || filename.endsWith(".png")) {
-            return file;
-          }
-          if (filename.endsWith(".zip")) {
-            const files = await unzipNonograms(file);
-            return files;
-          }
-          throw new Error(`processFiles: unsupported file type: ${file.name}`);
-        } catch {
-          return pMapSkip;
-        }
-      },
-      { concurrency: 8 },
-    );
-    this.nonograms = await parseNonograms(supportedFiles.flat());
-    await this.renderImages();
   },
   async renderImages() {
     revokeObjectUrls(this.images);

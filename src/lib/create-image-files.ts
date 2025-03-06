@@ -1,5 +1,5 @@
 import pMap, { pMapSkip } from "p-map";
-import { type Nonogram } from "./nonogram";
+import type { Nonogram } from "./parse-nonograms";
 import { type RenderOptions, renderImage } from "./render-image";
 
 export type ImageFile = {
