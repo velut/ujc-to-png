@@ -67,6 +67,9 @@ export const converter = defineComponent(() => ({
     this.images = await createImageFiles(this.nonograms, opts);
   },
   async downloadImages() {
+    if (this.images.length === 0) {
+      return;
+    }
     if (this.images.length === 1) {
       const image = this.images[0];
       saveAs(image.file, image.file.name);
