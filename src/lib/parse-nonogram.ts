@@ -1,4 +1,4 @@
-import { limit } from "./limit";
+import pMap, { pMapSkip } from "p-map";
 import { type Nonogram } from "./nonogram";
 import { parseFilename } from "./parse-filename";
 import { parseImageDimensions } from "./parse-image-dimensions";
@@ -15,11 +15,17 @@ export const parseNonogram = async (file: File): Promise<Nonogram> => {
 };
 
 export const parseNonograms = async (files: File[]): Promise<Nonogram[]> => {
-  const results = await Promise.allSettled(
-    files.map((file) => limit(() => parseNonogram(file))),
+  const nonograms = await pMap(
+    files,
+    async (file) => {
+      try {
+        const nonogram = await parseNonogram(file);
+        return nonogram;
+      } catch {
+        return pMapSkip;
+      }
+    },
+    { concurrency: 8 },
   );
-  return results
-    .filter((res) => res.status === "fulfilled")
-    .map((res) => res.value)
-    .sort((a, b) => a.timestamp.localeCompare(b.timestamp));
+  return nonograms.sort((a, b) => a.timestamp.localeCompare(b.timestamp));
 };

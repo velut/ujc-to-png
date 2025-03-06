@@ -3,6 +3,7 @@ import Alpine from "alpinejs";
 import accept from "attr-accept";
 import { saveAs } from "file-saver";
 import { fromEvent } from "file-selector";
+import pMap, { pMapSkip } from "p-map";
 import { createImageFiles, type ImageFile } from "../lib/create-image-files";
 import type { Nonogram } from "../lib/nonogram";
 import { parseNonograms } from "../lib/parse-nonogram";
@@ -49,23 +50,26 @@ export const converter = defineComponent(() => ({
     this.isBusy = false;
   },
   async processFiles(files: File[]) {
-    const results = await Promise.allSettled(
-      files.map((file) => {
-        const filename = file.name.toLowerCase();
-        if (filename.endsWith(".ujc") || filename.endsWith(".png")) {
-          return file;
+    const supportedFiles = await pMap(
+      files,
+      async (file) => {
+        try {
+          const filename = file.name.toLowerCase();
+          if (filename.endsWith(".ujc") || filename.endsWith(".png")) {
+            return file;
+          }
+          if (filename.endsWith(".zip")) {
+            const files = await unzipNonograms(file);
+            return files;
+          }
+          throw new Error(`processFiles: unsupported file type: ${file.name}`);
+        } catch {
+          return pMapSkip;
         }
-        if (filename.endsWith(".zip")) {
-          return unzipNonograms(file);
-        }
-        throw new Error(`processFiles: unsupported file type: ${file.name}`);
-      }),
+      },
+      { concurrency: 8 },
     );
-    const ujcFiles = results
-      .filter((res) => res.status === "fulfilled")
-      .map((res) => res.value)
-      .flat();
-    this.nonograms = await parseNonograms(ujcFiles);
+    this.nonograms = await parseNonograms(supportedFiles.flat());
     await this.renderImages();
   },
   async renderImages() {

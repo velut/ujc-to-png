@@ -1,4 +1,4 @@
-import { limit } from "./limit";
+import pMap, { pMapSkip } from "p-map";
 import { type Nonogram } from "./nonogram";
 import { type RenderOptions, renderImage } from "./render-image";
 
@@ -24,13 +24,17 @@ export const createImageFiles = async (
   nonograms: Nonogram[],
   renderOptions: RenderOptions,
 ): Promise<ImageFile[]> => {
-  const results = await Promise.allSettled(
-    nonograms.map((nonogram) =>
-      limit(() => createImageFile(nonogram, renderOptions)),
-    ),
+  const images = await pMap(
+    nonograms,
+    async (nonogram) => {
+      try {
+        const imageFile = await createImageFile(nonogram, renderOptions);
+        return imageFile;
+      } catch {
+        return pMapSkip;
+      }
+    },
+    { concurrency: 8 },
   );
-  return results
-    .filter((res) => res.status === "fulfilled")
-    .map((res) => res.value)
-    .sort((a, b) => a.file.lastModified - b.file.lastModified);
+  return images.sort((a, b) => a.file.lastModified - b.file.lastModified);
 };
