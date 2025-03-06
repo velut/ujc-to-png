@@ -15,11 +15,11 @@ export const parseNonogram = async (file: File): Promise<Nonogram> => {
 };
 
 export const parseNonograms = async (files: File[]): Promise<Nonogram[]> => {
-  return (
-    await Promise.allSettled(
-      files.map((file) => limit(() => parseNonogram(file))),
-    )
-  )
-    .flatMap((result) => (result.status === "fulfilled" ? result.value : []))
+  const results = await Promise.allSettled(
+    files.map((file) => limit(() => parseNonogram(file))),
+  );
+  return results
+    .filter((res) => res.status === "fulfilled")
+    .map((res) => res.value)
     .sort((a, b) => a.timestamp.localeCompare(b.timestamp));
 };

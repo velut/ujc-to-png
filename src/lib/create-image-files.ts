@@ -24,13 +24,13 @@ export const createImageFiles = async (
   nonograms: Nonogram[],
   renderOptions: RenderOptions,
 ): Promise<ImageFile[]> => {
-  return (
-    await Promise.allSettled(
-      nonograms.map((nonogram) =>
-        limit(() => createImageFile(nonogram, renderOptions)),
-      ),
-    )
-  )
-    .flatMap((result) => (result.status === "fulfilled" ? result.value : []))
+  const results = await Promise.allSettled(
+    nonograms.map((nonogram) =>
+      limit(() => createImageFile(nonogram, renderOptions)),
+    ),
+  );
+  return results
+    .filter((res) => res.status === "fulfilled")
+    .map((res) => res.value)
     .sort((a, b) => a.file.lastModified - b.file.lastModified);
 };

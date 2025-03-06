@@ -1,11 +1,13 @@
 import { BlobReader, BlobWriter, ZipWriter } from "@zip.js/zip.js";
 import Alpine from "alpinejs";
+import accept from "attr-accept";
 import { saveAs } from "file-saver";
 import { fromEvent } from "file-selector";
 import { createImageFiles, type ImageFile } from "../lib/create-image-files";
 import type { Nonogram } from "../lib/nonogram";
 import { parseNonograms } from "../lib/parse-nonogram";
 import { revokeObjectUrls } from "../lib/revoke-object-urls";
+import { unzipNonograms } from "../lib/unzip-nonograms";
 import { defineComponent } from "./define-components";
 
 export const converter = defineComponent(() => ({
@@ -34,18 +36,36 @@ export const converter = defineComponent(() => ({
   },
   async handleUpload(event: Event) {
     this.isBusy = true;
-    const files = (await fromEvent(event)).filter((res) => res instanceof File);
+    const files = (await fromEvent(event))
+      .filter((res) => res instanceof File)
+      .filter((file) =>
+        accept(
+          file,
+          "application/octet-stream,.ujc,image/png,.png,application/zip,.zip",
+        ),
+      );
     await this.processFiles(files);
     (document.getElementById("dropzone-input") as HTMLInputElement).value = "";
     this.isBusy = false;
   },
   async processFiles(files: File[]) {
-    // TODO:
-    // accept(
-    //   result,
-    //   "application/octet-stream,.ujc,image/png,.png,application/zip,.zip",
-    // )
-    this.nonograms = await parseNonograms(files);
+    const results = await Promise.allSettled(
+      files.map((file) => {
+        const filename = file.name.toLowerCase();
+        if (filename.endsWith(".ujc") || filename.endsWith(".png")) {
+          return file;
+        }
+        if (filename.endsWith(".zip")) {
+          return unzipNonograms(file);
+        }
+        throw new Error(`processFiles: unsupported file type: ${file.name}`);
+      }),
+    );
+    const ujcFiles = results
+      .filter((res) => res.status === "fulfilled")
+      .map((res) => res.value)
+      .flat();
+    this.nonograms = await parseNonograms(ujcFiles);
     await this.renderImages();
   },
   async renderImages() {
