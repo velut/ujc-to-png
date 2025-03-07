@@ -2,8 +2,12 @@ import Alpine from "alpinejs";
 import accept from "attr-accept";
 import { saveAs } from "file-saver";
 import { fromEvent } from "file-selector";
-import { createImageFiles, type ImageFile } from "../lib/create-image-files";
 import { parseNonograms, type Nonogram } from "../lib/parse-nonograms";
+import {
+  renderImages,
+  type Image,
+  type RenderOptions,
+} from "../lib/render-images";
 import { revokeObjectUrls } from "../lib/revoke-object-urls";
 import { zipImages } from "../lib/zip-images";
 import { defineComponent } from "./define-components";
@@ -11,7 +15,7 @@ import { defineComponent } from "./define-components";
 export const converter = defineComponent(() => ({
   isBusy: false,
   nonograms: [] as Nonogram[],
-  images: [] as ImageFile[],
+  images: [] as Image[],
   renderOptions: {
     recolor: false,
     scale: 1,
@@ -25,9 +29,9 @@ export const converter = defineComponent(() => ({
   init() {
     this.$watch(
       "renderOptions",
-      Alpine.debounce(async () => {
+      Alpine.debounce(async (options: RenderOptions) => {
         this.isBusy = true;
-        await this.renderImages();
+        await this.renderImages(options);
         this.isBusy = false;
       }, 500),
     );
@@ -47,24 +51,14 @@ export const converter = defineComponent(() => ({
         ]),
       );
     this.nonograms = await parseNonograms(files);
-    await this.renderImages();
+    await this.renderImages(this.renderOptions);
     (document.getElementById("dropzone-input") as HTMLInputElement).value = "";
     this.isBusy = false;
   },
-  async renderImages() {
+  async renderImages(options: RenderOptions) {
+    // Revoke object URLs for previously rendered images.
     revokeObjectUrls(this.images);
-    // Prevent $watch from triggering on later assignments.
-    const opts = {
-      ...this.renderOptions,
-      grid: { ...this.renderOptions.grid },
-    };
-    opts.scale = Number.isInteger(Number(opts.scale))
-      ? Math.max(1, Number(opts.scale))
-      : 1;
-    opts.grid.radius = Number.isInteger(Number(opts.grid.radius))
-      ? Math.max(0, Number(opts.grid.radius))
-      : 0;
-    this.images = await createImageFiles(this.nonograms, opts);
+    this.images = await renderImages(this.nonograms, options);
   },
   async downloadImages() {
     if (this.images.length === 0) {
