@@ -9,7 +9,7 @@ import DownloadButton from "./DownloadButton.astro";
 
   {/* Gallery. */}
   <div
-    class="not-prose flex items-center justify-center rounded-xl border-2 border-dashed border-gray-600 bg-gray-100 p-8 text-center dark:border-gray-400 dark:bg-gray-900"
+    class="not-prose bg-base-200 flex items-center justify-center rounded-xl border-2 border-dashed p-8 text-center"
   >
     <span class="text-balance motion-safe:animate-pulse" x-show="isBusy"
       >Processing nonograms, please wait...</span
@@ -24,9 +24,14 @@ import DownloadButton from "./DownloadButton.astro";
       x-show="!isBusy && images.length > 0"
     >
       <template x-for="image in images" :key="image.url">
-        <a :href="image.url" :title="image.file.name" target="_blank">
+        <a
+          :href="image.url"
+          :title="image.file.name"
+          target="_blank"
+          class="hover:border-primary rounded-sm border-2"
+        >
           <img
-            class="h-32 w-32 rounded border border-gray-200 bg-white object-contain shadow [image-rendering:pixelated] hover:border-gray-400 hover:shadow-lg dark:border-gray-800 dark:hover:border-gray-600"
+            class="size-32 bg-white object-contain [image-rendering:pixelated]"
             :src="image.url"
             :alt="image.file.name"
           />
