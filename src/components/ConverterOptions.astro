@@ -14,8 +14,9 @@
       id="option-recolor"
       name="option-recolor"
       type="checkbox"
-      class="h-5 w-5 rounded dark:bg-gray-900"
+      class="checkbox"
       x-model="renderOptions.recolor"
+      :disabled="isBusy"
     />
   </div>
   <hr />
@@ -34,8 +35,9 @@
       type="text"
       inputmode="numeric"
       pattern="[0-9]*"
-      class="h-10 w-1/2 rounded sm:w-1/4 dark:bg-gray-900"
+      class="input w-1/2 sm:w-1/4"
       x-model="renderOptions.scale"
+      :disabled="isBusy"
     />
   </div>
   <hr />
@@ -66,8 +68,9 @@
           id="option-grid-enable"
           name="option-grid-enable"
           type="checkbox"
-          class="h-5 w-5 rounded dark:bg-gray-900"
+          class="checkbox"
           x-model="renderOptions.grid.enabled"
+          :disabled="isBusy"
         />
       </div>
 
@@ -86,9 +89,9 @@
           type="text"
           inputmode="numeric"
           pattern="[0-9]*"
-          class="h-10 w-1/2 rounded disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-400 sm:w-1/4 dark:bg-gray-900 dark:disabled:bg-gray-700 dark:disabled:text-gray-600"
+          class="input w-1/2 sm:w-1/4"
           x-model="renderOptions.grid.size"
-          :disabled="!renderOptions.grid.enabled"
+          :disabled="isBusy || !renderOptions.grid.enabled"
         />
       </div>
 
@@ -105,9 +108,9 @@
           id="option-grid-color"
           name="option-grid-color"
           type="color"
-          class="h-10 w-1/2 rounded disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-400 sm:w-1/4 dark:bg-gray-900 dark:disabled:bg-gray-700 dark:disabled:text-gray-600"
+          class="input w-1/2 sm:w-1/4"
           x-model="renderOptions.grid.color"
-          :disabled="!renderOptions.grid.enabled"
+          :disabled="isBusy || !renderOptions.grid.enabled"
         />
       </div>
 
@@ -128,9 +131,9 @@
           type="text"
           inputmode="numeric"
           pattern="[0-9]*"
-          class="h-10 w-1/2 rounded disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-400 sm:w-1/4 dark:bg-gray-900 dark:disabled:bg-gray-700 dark:disabled:text-gray-600"
+          class="input w-1/2 sm:w-1/4"
           x-model="renderOptions.grid.radius"
-          :disabled="!renderOptions.grid.enabled"
+          :disabled="isBusy || !renderOptions.grid.enabled"
         />
       </div>
     </div>
