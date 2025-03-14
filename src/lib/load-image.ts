@@ -1,4 +1,4 @@
-export const loadImage = async (blob: Blob): Promise<HTMLImageElement> => {
+export async function loadImage(blob: Blob): Promise<HTMLImageElement> {
   const image = document.createElement("img");
   const url = URL.createObjectURL(blob);
   image.onload = () => {
@@ -7,4 +7,4 @@ export const loadImage = async (blob: Blob): Promise<HTMLImageElement> => {
   image.src = url;
   await image.decode();
   return image;
-};
+}
