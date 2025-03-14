@@ -10,9 +10,8 @@
     @drop.window.prevent="handleUpload($event)"
   >
     <span class="text-balance" x-show="!isBusy"
-      >Drag and drop your nonograms here, or click to select <code
-        class="font-mono">.ujc</code
-      > or <code class="font-mono">.png</code> files.</span
+      >Drag and drop your exported files here (.zip, .ujc, or .png), or click to
+      open a file dialog.</span
     >
     <span class="text-balance motion-safe:animate-pulse" x-show="isBusy"
       >Processing nonograms, please wait...</span
