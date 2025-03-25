@@ -64,20 +64,18 @@ export async function renderImages(
 function normalizeRenderOptions(options: RenderOptions): RenderOptions {
   return {
     recolor: Boolean(options.recolor),
-    scale: Number.isInteger(Number(options.scale))
-      ? Math.max(1, Number(options.scale))
-      : 1,
+    scale: toInt(options.scale, 1),
     grid: {
       enabled: Boolean(options.grid.enabled),
-      size: Number.isInteger(Number(options.grid.size))
-        ? Math.max(1, Number(options.grid.size))
-        : 1,
+      size: toInt(options.grid.size, 1),
       color: options.grid.color,
-      radius: Number.isInteger(Number(options.grid.radius))
-        ? Math.max(0, Number(options.grid.radius))
-        : 0,
+      radius: toInt(options.grid.radius, 0),
     },
   };
+}
+
+function toInt(value: unknown, min: number): number {
+  return Number.isInteger(Number(value)) ? Math.max(min, Number(value)) : min;
 }
 
 async function renderImage(
