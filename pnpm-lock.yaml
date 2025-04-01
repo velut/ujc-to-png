@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@astrojs/alpinejs':
-        specifier: ^0.4.3
-        version: 0.4.3(@types/alpinejs@3.13.11)(alpinejs@3.14.9)
+        specifier: ^0.4.5
+        version: 0.4.5(@types/alpinejs@3.13.11)(alpinejs@3.14.9)
       '@zip.js/zip.js':
         specifier: ^2.7.60
         version: 2.7.60
@@ -75,8 +75,8 @@ importers:
 
 packages:
 
-  '@astrojs/alpinejs@0.4.3':
-    resolution: {integrity: sha512-Us4nqkjcn5FUK/0OcZPN9eRjT8IQVBJxPdZ5JlzScy1F6+twYThBy29lyM8rYwI2kNZFde+V6mSws2w4Vqv7uw==}
+  '@astrojs/alpinejs@0.4.5':
+    resolution: {integrity: sha512-BgDVf7J5P+oXMNwWgnLvvzBMGiYxIN4/zOOySj4s/zTokiw579wMdjIke5HP7CX6ylo+u7eWEnQMMCVbF5vWfg==}
     peerDependencies:
       '@types/alpinejs': ^3.0.0
       alpinejs: ^3.0.0
@@ -2102,7 +2102,7 @@ packages:
 
 snapshots:
 
-  '@astrojs/alpinejs@0.4.3(@types/alpinejs@3.13.11)(alpinejs@3.14.9)':
+  '@astrojs/alpinejs@0.4.5(@types/alpinejs@3.13.11)(alpinejs@3.14.9)':
     dependencies:
       '@types/alpinejs': 3.13.11
       alpinejs: 3.14.9

@@ -14,7 +14,7 @@
     "pre-push": "pnpm i && prettier --check . && astro check && astro build"
   },
   "dependencies": {
-    "@astrojs/alpinejs": "^0.4.3",
+    "@astrojs/alpinejs": "^0.4.5",
     "@zip.js/zip.js": "^2.7.60",
     "alpinejs": "^3.14.9",
     "astro": "^5.5.4",
