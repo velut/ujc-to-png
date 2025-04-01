@@ -12,8 +12,8 @@ importers:
         specifier: ^0.4.3
         version: 0.4.3(@types/alpinejs@3.13.11)(alpinejs@3.14.9)
       '@zip.js/zip.js':
-        specifier: ^2.7.57
-        version: 2.7.57
+        specifier: ^2.7.60
+        version: 2.7.60
       alpinejs:
         specifier: ^3.14.9
         version: 3.14.9
@@ -709,8 +709,8 @@ packages:
   '@vue/shared@3.1.5':
     resolution: {integrity: sha512-oJ4F3TnvpXaQwZJNF3ZK+kLPHKarDmJjJ6jyzVNDKH9md1dptjC7lWR//jrGuLdek/U6iltWxqAnYOu8gCiOvA==}
 
-  '@zip.js/zip.js@2.7.57':
-    resolution: {integrity: sha512-BtonQ1/jDnGiMed6OkV6rZYW78gLmLswkHOzyMrMb+CAR7CZO8phOHO6c2qw6qb1g1betN7kwEHhhZk30dv+NA==}
+  '@zip.js/zip.js@2.7.60':
+    resolution: {integrity: sha512-vA3rLyqdxBrVo1FWSsbyoecaqWTV+vgPRf0QKeM7kVDG0r+lHUqd7zQDv1TO9k4BcAoNzNDSNrrel24Mk6addA==}
     engines: {bun: '>=0.7.0', deno: '>=1.0.0', node: '>=16.5.0'}
 
   acorn@8.14.1:
@@ -2655,7 +2655,7 @@ snapshots:
 
   '@vue/shared@3.1.5': {}
 
-  '@zip.js/zip.js@2.7.57': {}
+  '@zip.js/zip.js@2.7.60': {}
 
   acorn@8.14.1: {}
 
