@@ -14,10 +14,10 @@
     "pre-push": "pnpm i && prettier --check . && astro check && astro build"
   },
   "dependencies": {
-    "@astrojs/alpinejs": "^0.4.5",
+    "@astrojs/alpinejs": "^0.4.6",
     "@zip.js/zip.js": "^2.7.60",
     "alpinejs": "^3.14.9",
-    "astro": "^5.5.6",
+    "astro": "^5.6.2",
     "attr-accept": "^2.2.5",
     "file-saver": "^2.0.5",
     "file-selector": "^2.1.2",
@@ -26,16 +26,16 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
     "@tailwindcss/typography": "^0.5.16",
-    "@tailwindcss/vite": "^4.0.17",
+    "@tailwindcss/vite": "^4.1.4",
     "@types/alpinejs": "^3.13.11",
     "@types/file-saver": "^2.0.7",
-    "@types/node": "^22.13.15",
-    "daisyui": "^5.0.9",
+    "@types/node": "^22.14.1",
+    "daisyui": "^5.0.19",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "rollup-plugin-license": "^3.6.0",
-    "tailwindcss": "^4.0.17",
-    "typescript": "^5.8.2"
+    "tailwindcss": "^4.1.4",
+    "typescript": "^5.8.3"
   }
 }
