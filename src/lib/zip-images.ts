@@ -8,7 +8,7 @@ export async function zipImages(images: Image[]): Promise<Blob> {
     images,
     async (image) => {
       try {
-        zip.add(image.file.name, new BlobReader(image.file));
+        await zip.add(image.file.name, new BlobReader(image.file));
       } catch {
         return pMapSkip;
       }
