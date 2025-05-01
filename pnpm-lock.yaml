@@ -52,8 +52,8 @@ importers:
         specifier: ^22.14.1
         version: 22.14.1
       daisyui:
-        specifier: ^5.0.19
-        version: 5.0.19
+        specifier: ^5.0.35
+        version: 5.0.35
       prettier:
         specifier: ^3.5.3
         version: 3.5.3
@@ -883,8 +883,8 @@ packages:
     engines: {node: '>=4'}
     hasBin: true
 
-  daisyui@5.0.19:
-    resolution: {integrity: sha512-vuxloVgdmTnGpA6CFnQyLkXuqPmusHgYZ0L5Qg1pQzAYPUMc0HM2S3brnu7xRnAUq7ZMAqyoV78Fvht7nY2svg==}
+  daisyui@5.0.35:
+    resolution: {integrity: sha512-AWi11n/x5++mps55jcwrBf0Lmip1euWY0FYcH/05SFGmoqrU7S7/aIUWaiaeqlJ5EcmEZ/7zEY73aOxMv6hcIg==}
 
   debug@4.4.0:
     resolution: {integrity: sha512-6WTZ/IxCY/T6BALoZHaE4ctp9xm+Z5kY/pzYaCHRFeyVhojxlrm+46y68HA6hr0TcwEssoxNiDEUJQjfPZ/RYA==}
@@ -2908,7 +2908,7 @@ snapshots:
 
   cssesc@3.0.0: {}
 
-  daisyui@5.0.19: {}
+  daisyui@5.0.35: {}
 
   debug@4.4.0:
     dependencies:

@@ -30,7 +30,7 @@
     "@types/alpinejs": "^3.13.11",
     "@types/file-saver": "^2.0.7",
     "@types/node": "^22.14.1",
-    "daisyui": "^5.0.19",
+    "daisyui": "^5.0.35",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.11",
