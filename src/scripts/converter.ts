@@ -65,7 +65,7 @@ export const converter = defineComponent(() => ({
       return;
     }
     if (this.images.length === 1) {
-      const image = this.images[0];
+      const image = this.images[0]!;
       saveAs(image.file, image.file.name);
       return;
     }

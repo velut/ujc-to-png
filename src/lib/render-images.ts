@@ -187,7 +187,7 @@ async function addGridToImage(
       const red = pixels[redIndex];
       const green = pixels[redIndex + 1];
       const blue = pixels[redIndex + 2];
-      const alpha = pixels[redIndex + 3] / 255;
+      const alpha = pixels[redIndex + 3]! / 255;
 
       // Paint possibly scaled pixel.
       context.fillStyle = `rgb(${red}, ${green}, ${blue}, ${alpha})`;
