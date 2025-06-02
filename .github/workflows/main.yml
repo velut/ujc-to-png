@@ -7,29 +7,26 @@ on:
 
 jobs:
   # See https://stackoverflow.com/a/73624365/16109047
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     if: github.repository == 'velut/ujc-to-png' && github.ref == 'refs/heads/main'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
+      - name: Setup bun
+        uses: oven-sh/setup-bun@v2
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20.x
-          cache: "pnpm"
+          node-version: lts/*
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: bun install --frozen-lockfile
 
       - name: Lint
-        run: pnpm lint
+        run: bun run lint
 
       - name: Build
-        run: pnpm build
+        run: bun run build
