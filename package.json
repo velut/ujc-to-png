@@ -11,7 +11,7 @@
     "astro": "astro",
     "lint": "prettier --check .",
     "format": "prettier --write .",
-    "pre-push": "pnpm i && prettier --check . && astro check && astro build"
+    "pre-push": "bun i && bun run lint && bun run build"
   },
   "dependencies": {
     "@astrojs/alpinejs": "^0.4.8",
