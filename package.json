@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@astrojs/alpinejs": "^0.4.8",
-    "@zip.js/zip.js": "^2.7.62",
+    "@zip.js/zip.js": "^2.7.71",
     "alpinejs": "^3.14.9",
     "astro": "^5.10.1",
     "attr-accept": "^2.2.5",
