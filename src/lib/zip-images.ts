@@ -9,7 +9,8 @@ export async function zipImages(images: Image[]): Promise<Blob> {
     async (image) => {
       try {
         await zip.add(image.file.name, new BlobReader(image.file));
-      } catch {
+      } catch (err) {
+        console.error(err);
         return pMapSkip;
       }
     },

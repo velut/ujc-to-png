@@ -52,7 +52,8 @@ export async function renderImages(
           });
           const url = URL.createObjectURL(file);
           return { file, url };
-        } catch {
+        } catch (err) {
+          console.error(err);
           return pMapSkip;
         }
       },

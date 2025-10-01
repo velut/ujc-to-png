@@ -35,7 +35,8 @@ export async function parseNonograms(files: File[]): Promise<Nonogram[]> {
       async (file) => {
         try {
           return await parseNonogram(file);
-        } catch {
+        } catch (err) {
+          console.error(err);
           return pMapSkip;
         }
       },
@@ -58,7 +59,8 @@ async function getUjcFiles(files: File[]): Promise<File[]> {
             return await unzipUjcFiles(file);
           }
           throw new Error(`unsupported file type: ${file.name}`);
-        } catch {
+        } catch (err) {
+          console.error(err);
           return pMapSkip;
         }
       },
@@ -79,7 +81,8 @@ async function unzipUjcFiles(file: File): Promise<File[]> {
       try {
         const data = await entry.getData(new BlobWriter());
         return new File([data], entry.filename.replace("MyNonograms/", ""));
-      } catch {
+      } catch (err) {
+        console.error(err);
         return pMapSkip;
       }
     },
