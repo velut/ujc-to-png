@@ -70,14 +70,14 @@ async function getUjcFiles(files: File[]): Promise<File[]> {
 async function unzipUjcFiles(file: File): Promise<File[]> {
   const reader = new ZipReader(new BlobReader(file));
   const entries = await reader.getEntries();
-  const ujcEntries = entries.filter(({ filename }) =>
-    filename.toLowerCase().endsWith(".ujc"),
-  );
+  const ujcEntries = entries
+    .filter((entry) => !entry.directory)
+    .filter(({ filename }) => filename.toLowerCase().endsWith(".ujc"));
   return await pMap(
     ujcEntries,
     async (entry) => {
       try {
-        const data = await entry.getData!(new BlobWriter());
+        const data = await entry.getData(new BlobWriter());
         return new File([data], entry.filename.replace("MyNonograms/", ""));
       } catch {
         return pMapSkip;
