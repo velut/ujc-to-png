@@ -10,7 +10,6 @@ export default defineConfig({
   vite: {
     plugins: [
       // See https://github.com/withastro/astro/issues/14030
-      // @ts-expect-error
       tailwindcss(),
       isProduction && (await import("./vite-plugin-licenses")).licenses(),
     ],
