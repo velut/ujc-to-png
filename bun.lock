@@ -4,7 +4,7 @@
     "": {
       "name": "ujc-to-png",
       "dependencies": {
-        "@astrojs/alpinejs": "^0.4.8",
+        "@astrojs/alpinejs": "^0.4.9",
         "@zip.js/zip.js": "^2.7.73",
         "alpinejs": "^3.15.0",
         "astro": "^5.13.5",
@@ -31,7 +31,7 @@
     },
   },
   "packages": {
-    "@astrojs/alpinejs": ["@astrojs/alpinejs@0.4.8", "", { "peerDependencies": { "@types/alpinejs": "^3.0.0", "alpinejs": "^3.0.0" } }, "sha512-aNiJELzqunTuwXZEzqLmiTzMirvrKI4tYKauyAxZbk+Stu/xUZIgnfXeWSy87yF2l/QpnYELgNTDlFduUbp/nw=="],
+    "@astrojs/alpinejs": ["@astrojs/alpinejs@0.4.9", "", { "peerDependencies": { "@types/alpinejs": "^3.0.0", "alpinejs": "^3.0.0" } }, "sha512-fvKBAugn7yIngEKfdk6vL3ZlcVKtQvFXCZznG28OikGanKN5W+PkRPIdKaW/0gThRU2FyCemgzyHgyFjsH8dTA=="],
 
     "@astrojs/check": ["@astrojs/check@0.9.4", "", { "dependencies": { "@astrojs/language-server": "^2.15.0", "chokidar": "^4.0.1", "kleur": "^4.1.5", "yargs": "^17.7.2" }, "peerDependencies": { "typescript": "^5.0.0" }, "bin": { "astro-check": "dist/bin.js" } }, "sha512-IOheHwCtpUfvogHHsvu0AbeRZEnjJg3MopdLddkJE70mULItS/Vh37BHcI00mcOJcH1vhD3odbpvWokpxam7xA=="],
 

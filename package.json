@@ -14,7 +14,7 @@
     "pre-push": "bun i && bun run lint && bun run build"
   },
   "dependencies": {
-    "@astrojs/alpinejs": "^0.4.8",
+    "@astrojs/alpinejs": "^0.4.9",
     "@zip.js/zip.js": "^2.7.73",
     "alpinejs": "^3.15.0",
     "astro": "^5.13.5",
