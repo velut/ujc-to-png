@@ -5,7 +5,7 @@
       "name": "ujc-to-png",
       "dependencies": {
         "@astrojs/alpinejs": "^0.4.9",
-        "@zip.js/zip.js": "^2.7.73",
+        "@zip.js/zip.js": "^2.8.4",
         "alpinejs": "^3.15.0",
         "astro": "^5.14.1",
         "attr-accept": "^2.2.5",
@@ -327,7 +327,7 @@
 
     "@vue/shared": ["@vue/shared@3.1.5", "", {}, "sha512-oJ4F3TnvpXaQwZJNF3ZK+kLPHKarDmJjJ6jyzVNDKH9md1dptjC7lWR//jrGuLdek/U6iltWxqAnYOu8gCiOvA=="],
 
-    "@zip.js/zip.js": ["@zip.js/zip.js@2.7.73", "", {}, "sha512-I2UP8/rdQE5hTtVVL08B7P8XuwXiKuuMUPjNuFOVL/9b+8IsExR9S5jz2H58u0rJjU4M1BikLgqEMG8gZJZVBw=="],
+    "@zip.js/zip.js": ["@zip.js/zip.js@2.8.4", "", {}, "sha512-DsayUNi6AAXKNahxu2mLSr8iecZYoBgsW0TuPcxwUv0jh3eTf1XI0OI1V1loCyxCyuwnLtwj92iCJ7oiQSt8ow=="],
 
     "acorn": ["acorn@8.15.0", "", { "bin": { "acorn": "bin/acorn" } }, "sha512-NZyJarBfL7nWwIq+FDL6Zp/yHEhePMNnnJ0y3qfieCrmNvYct8uvtiV41UvlSe6apAfk0fY1FbWx+NwfmpvtTg=="],
 
